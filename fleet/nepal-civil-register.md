@@ -22,6 +22,10 @@ Buddha Air operates a standardized, active 16-aircraft all-ATR fleet (ATR 42-320
 | **Buddha Air** | ATR 42-320 | 2 | `9N-AIN`<br>`9N-AJS` | 1998<br>2000 | **1998 – 2000** |
 | **Total Fleet** | — | **16** | All-ATR Configuration | — | **1998 – 2012** |
 
+<p class="table-source-caption">
+  Source: Verified against primary operator disclosure &mdash; <a href="https://www.buddhaair.com/about-us/our-aircrafts" target="_blank" rel="noopener">Buddha Air Fleet Register</a>
+</p>
+
 > **Fleet Modernization & Historical Retirement Note:**
 > * **Active Baseline:** 16 aircraft (14× ATR 72-500 series, 2× ATR 42-320 series).
 > * **Beechcraft 1900D Retirement & Export:** Buddha Air's original Beechcraft 1900D twin-turboprop fleet (`9N-ABS`, `9N-AEW`, `9N-AEE`, `9N-AIX`) was fully phased out, deregistered under CAAN, and exported to Canadian commercial operators, standardizing the airline's maintenance and flight operations entirely on Pratt & Whitney Canada PW120/PW127 turboprops.

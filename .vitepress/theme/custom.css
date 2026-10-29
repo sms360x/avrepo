@@ -351,6 +351,25 @@ body {
   background-color: #1B1B1B;
 }
 
+.table-source-caption {
+  font-size: 0.82rem;
+  color: #777777;
+  margin-top: -16px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.table-source-caption a {
+  color: #AAAAAA;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.table-source-caption a:hover {
+  color: #EDEDED;
+}
+
 /* ==========================================================================
    Code Blocks & Badges (Monochrome Charcoal Styling)
    ========================================================================== */
