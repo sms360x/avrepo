@@ -15,7 +15,8 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#0A0A0A' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap' }]
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap' }],
+    ['script', { defer: 'true', src: 'https://cloud.umami.is/script.js', 'data-website-id': '712c15c2-21ea-40f4-b52f-06a1a96a1a79' }]
   ],
 
   themeConfig: {
