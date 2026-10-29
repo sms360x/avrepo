@@ -333,9 +333,7 @@ onUnmounted(() => {
         Operational &amp; Educational Reference Only. Does not supersede official aircraft flight manuals (AFM), airline AOC manuals, or statutory directives of the Civil Aviation Authority of Nepal (CAAN).
       </p>
       <p class="copyright-line">
-        Curated by <a href="https://gsacharya.com" target="_blank" rel="noopener">Ghanshyam Acharya</a> &bull;
-        <button type="button" class="footer-inline-btn" @click="openSupportModal('updates')">Submit Data Correction</button> &bull;
-        <button type="button" class="footer-inline-btn" @click="openSupportModal('support')">Support AvRepo</button>
+        Curated by <a href="https://gsacharya.com" target="_blank" rel="noopener">Ghanshyam Acharya</a>
       </p>
     </footer>
 
@@ -449,7 +447,7 @@ onUnmounted(() => {
                 <ul class="qr-info-list">
                   <li><strong>Domain &amp; Infrastructure:</strong> Maintains sub-second CDN response times and uptime for active flight crews.</li>
                   <li><strong>Register Verification:</strong> Funds manual cross-referencing of airworthiness directives and CAAN aircraft logs.</li>
-                  <li><strong>Institutional Research:</strong> For research partnerships or safety analytics grants, reach out to <a href="mailto:gsacharya.aviation@gmail.com" class="qr-link">gsacharya.aviation@gmail.com</a>.</li>
+                  <li><strong>Institutional Research:</strong> For research partnerships or safety analytics grants.</li>
                 </ul>
                 <div class="qr-sustainability-note">
                   100% of community contributions are allocated toward independent safety research and server operations.
