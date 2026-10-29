@@ -430,8 +430,374 @@ div[class*='language-'] {
   color: #666666 !important;
 }
 
+.portal-page .VPFooter {
+  display: none !important;
+}
+
 .VPFooter .message,
 .VPFooter .copyright {
   color: #666666 !important;
   font-size: 0.85rem;
 }
+
+/* ==========================================================================
+   Wikipedia-Style Axis Portal & Modular Modal Styling
+   ========================================================================== */
+
+.wiki-portal-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+.wiki-portal-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.wiki-portal-title {
+  font-family: var(--font-serif);
+  font-size: 3.4rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.025em;
+  color: #EDEDED !important;
+  margin: 0 0 10px 0 !important;
+  border: none !important;
+}
+
+.wiki-portal-subtitle {
+  font-size: 1.12rem;
+  color: #888888;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Symmetrical Axis Menu Grid (3 Columns on Desktop) */
+.wiki-portal-axis {
+  display: grid;
+  grid-template-columns: 1fr 280px 1fr;
+  gap: 36px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 56px;
+}
+
+.wiki-axis-column {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.wiki-axis-card {
+  display: block;
+  background-color: #161616;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 24px;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wiki-axis-card:hover {
+  background-color: #1A1A1A;
+  border-color: #444444;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+.wiki-axis-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.015em;
+  color: #EDEDED !important;
+  margin: 0 0 8px 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wiki-arrow {
+  color: #666666;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.wiki-axis-card:hover .wiki-arrow {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+.wiki-axis-card-desc {
+  font-size: 0.88rem;
+  color: #888888;
+  line-height: 1.6;
+  margin: 0 !important;
+}
+
+/* Central Circular Crest Axis */
+.wiki-axis-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.wiki-logo-container {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  padding: 6px;
+  background: #141414;
+  border: 1px solid #2E2E2E;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wiki-logo-container:hover {
+  transform: scale(1.03);
+  border-color: #484848;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.95);
+}
+
+.wiki-logo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.wiki-center-badge {
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888888;
+  font-weight: 500;
+}
+
+.curator-bio-trigger {
+  background: #161616;
+  border: 1px solid #2E2E2E;
+  color: #EDEDED;
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.curator-bio-trigger:hover {
+  background: #222222;
+  border-color: #555555;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Minimalist Two-Line Disclaimer Footer */
+.wiki-portal-footer {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid #202020;
+  text-align: center;
+}
+
+.wiki-portal-footer .disclaimer-line {
+  font-size: 0.82rem;
+  color: #666666;
+  max-width: 820px;
+  margin: 0 auto 10px;
+  line-height: 1.55;
+}
+
+.wiki-portal-footer .copyright-line {
+  font-size: 0.82rem;
+  color: #555555;
+  margin: 0;
+}
+
+.wiki-portal-footer .copyright-line a {
+  color: #888888;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.wiki-portal-footer .copyright-line a:hover {
+  color: #EDEDED;
+}
+
+/* Responsive Axis Menu */
+@media (max-width: 880px) {
+  .wiki-portal-axis {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .wiki-axis-center {
+    order: -1;
+  }
+  .wiki-axis-column {
+    width: 100%;
+  }
+  .wiki-portal-title {
+    font-size: 2.6rem !important;
+  }
+}
+
+/* Glass-Morphism Curator Dialog Modal */
+.curator-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.curator-modal-card {
+  background: rgba(20, 20, 20, 0.96);
+  border: 1px solid #303030;
+  border-radius: 14px;
+  color: #EDEDED;
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95);
+  position: relative;
+  padding: 36px 32px 32px;
+  text-align: left;
+}
+
+.curator-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 1px solid #333333;
+  color: #888888;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.curator-modal-close:hover {
+  color: #FFFFFF;
+  border-color: #666666;
+  background: #252525;
+}
+
+.curator-modal-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 8px;
+}
+
+.curator-modal-name {
+  font-family: var(--font-serif);
+  font-size: 1.85rem !important;
+  font-weight: 500 !important;
+  color: #EDEDED !important;
+  margin: 0 0 6px 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.curator-modal-role {
+  font-size: 0.92rem;
+  color: #A0A0A0;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+}
+
+.curator-modal-lead {
+  font-size: 0.95rem;
+  color: #C0C0C0;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.curator-highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .curator-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.highlight-item {
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.highlight-item strong {
+  display: block;
+  font-size: 0.88rem;
+  color: #EDEDED;
+  margin-bottom: 4px;
+}
+
+.highlight-item span {
+  font-size: 0.82rem;
+  color: #888888;
+  line-height: 1.5;
+  display: block;
+}
+
+.curator-newsletter-note,
+.curator-purpose-note {
+  background: #121212;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  color: #A8A8A8;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.curator-newsletter-note strong,
+.curator-purpose-note strong {
+  color: #EDEDED;
+}
+
