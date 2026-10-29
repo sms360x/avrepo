@@ -1,14 +1,23 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const dialogRef = ref(null)
+const curatorDialogRef = ref(null)
+const supportDialogRef = ref(null)
 const searchInput = ref('')
+const activeSupportTab = ref('support')
 
-function openModal() {
+const updateForm = ref({
+  registration: '',
+  nature: '',
+  contact: ''
+})
+const updateSubmitted = ref(false)
+
+function openCuratorModal() {
   if (typeof window === 'undefined') return
   try {
-    if (dialogRef.value?.showModal) {
-      dialogRef.value.showModal()
+    if (curatorDialogRef.value?.showModal) {
+      curatorDialogRef.value.showModal()
     } else {
       const dialog = document.getElementById('curator-dialog')
       if (dialog?.showModal) {
@@ -18,15 +27,15 @@ function openModal() {
       }
     }
   } catch (err) {
-    console.warn('Modal open error:', err)
+    console.warn('Curator modal open error:', err)
   }
 }
 
-function closeModal() {
+function closeCuratorModal() {
   if (typeof window === 'undefined') return
   try {
-    if (dialogRef.value?.close) {
-      dialogRef.value.close()
+    if (curatorDialogRef.value?.close) {
+      curatorDialogRef.value.close()
     } else {
       const dialog = document.getElementById('curator-dialog')
       if (dialog?.close) {
@@ -36,14 +45,96 @@ function closeModal() {
       }
     }
   } catch (err) {
-    console.warn('Modal close error:', err)
+    console.warn('Curator modal close error:', err)
   }
 }
 
-function onBackdropClick(e) {
-  if (e.target === dialogRef.value || e.target?.id === 'curator-dialog') {
-    closeModal()
+function openSupportModal(tab = 'support') {
+  activeSupportTab.value = tab
+  if (typeof window === 'undefined') return
+  try {
+    if (supportDialogRef.value?.showModal) {
+      supportDialogRef.value.showModal()
+    } else {
+      const dialog = document.getElementById('support-dialog')
+      if (dialog?.showModal) {
+        dialog.showModal()
+      } else if (dialog) {
+        dialog.setAttribute('open', '')
+      }
+    }
+  } catch (err) {
+    console.warn('Support modal open error:', err)
   }
+}
+
+function closeSupportModal() {
+  if (typeof window === 'undefined') return
+  try {
+    if (supportDialogRef.value?.close) {
+      supportDialogRef.value.close()
+    } else {
+      const dialog = document.getElementById('support-dialog')
+      if (dialog?.close) {
+        dialog.close()
+      } else if (dialog) {
+        dialog.removeAttribute('open')
+      }
+    }
+  } catch (err) {
+    console.warn('Support modal close error:', err)
+  }
+}
+
+function onCuratorBackdropClick(e) {
+  if (e.target === curatorDialogRef.value || e.target?.id === 'curator-dialog') {
+    closeCuratorModal()
+  }
+}
+
+function onSupportBackdropClick(e) {
+  if (e.target === supportDialogRef.value || e.target?.id === 'support-dialog') {
+    closeSupportModal()
+  }
+}
+
+function handleKeydown(e) {
+  if (e.key === 'Escape') {
+    closeCuratorModal()
+    closeSupportModal()
+  }
+}
+
+function submitCorrection() {
+  if (!updateForm.value.registration && !updateForm.value.nature) return
+  const reg = updateForm.value.registration || 'General Civil Register'
+  const subject = encodeURIComponent(`[AvRepo Data Update] ${reg}`)
+  const body = encodeURIComponent(
+`Aircraft / Operator Registration:
+${updateForm.value.registration}
+
+Nature of Update / Correction:
+${updateForm.value.nature}
+
+Submitter Contact / Role:
+${updateForm.value.contact || 'Not provided'}
+
+---
+Submitted via avrepo.gsacharya.com`
+  )
+  if (typeof window !== 'undefined') {
+    window.location.href = `mailto:gsacharya.aviation@gmail.com?subject=${subject}&body=${body}`
+  }
+  updateSubmitted.value = true
+}
+
+function resetForm() {
+  updateForm.value = {
+    registration: '',
+    nature: '',
+    contact: ''
+  }
+  updateSubmitted.value = false
 }
 
 function triggerSearch(query = '') {
@@ -82,12 +173,6 @@ function triggerSearch(query = '') {
 function onSearchSubmit(e) {
   if (e) e.preventDefault()
   triggerSearch(searchInput.value)
-}
-
-function handleKeydown(e) {
-  if (e.key === 'Escape') {
-    closeModal()
-  }
 }
 
 onMounted(() => {
@@ -152,7 +237,7 @@ onUnmounted(() => {
           />
         </div>
         <div class="wiki-center-caption">
-          <span class="wiki-center-badge">Aviation Knowledge Base</span>
+          <span class="wiki-center-badge">Aviation Repository</span>
         </div>
       </section>
 
@@ -220,10 +305,13 @@ onUnmounted(() => {
         <button type="button" class="search-chip" @click="triggerSearch('YOM')">YOM Vintage</button>
       </div>
 
-      <!-- Curator Profile / About Trigger Button -->
-      <div class="wiki-curator-trigger-wrap">
-        <button type="button" class="curator-bio-trigger" @click="openModal">
+      <!-- Action Buttons: Curator Profile + Support & Data Updates -->
+      <div class="wiki-actions-wrap">
+        <button type="button" class="portal-action-btn curator-trigger" @click="openCuratorModal">
           Curator Profile / About &nearr;
+        </button>
+        <button type="button" class="portal-action-btn support-trigger" @click="openSupportModal('support')">
+          Support &amp; Data Updates &nearr;
         </button>
       </div>
     </div>
@@ -235,19 +323,21 @@ onUnmounted(() => {
       </p>
       <p class="copyright-line">
         Curated by Ghanshyam R. Acharya &bull; &copy; 2026 G.S. Acharya. All rights reserved &bull;
-        <a href="https://gsacharya.com" target="_blank" rel="noopener">gsacharya.com</a>
+        <a href="https://gsacharya.com" target="_blank" rel="noopener">gsacharya.com</a> &bull;
+        <button type="button" class="footer-inline-btn" @click="openSupportModal('updates')">Submit Data Correction</button> &bull;
+        <button type="button" class="footer-inline-btn" @click="openSupportModal('support')">Support AvRepo</button>
       </p>
     </footer>
 
-    <!-- Native Glass-Morphism Curator Dialog Modal (No Teleport - 100% Hydration Safe) -->
+    <!-- Native Glass-Morphism Curator Dialog Modal (100% Hydration Safe) -->
     <dialog
       id="curator-dialog"
-      ref="dialogRef"
+      ref="curatorDialogRef"
       class="curator-modal"
-      @click="onBackdropClick"
+      @click="onCuratorBackdropClick"
     >
       <div class="curator-modal-inner">
-        <button type="button" class="curator-modal-close" aria-label="Close" @click="closeModal">&times;</button>
+        <button type="button" class="curator-modal-close" aria-label="Close" @click="closeCuratorModal">&times;</button>
         
         <div class="curator-modal-header">
           <span class="curator-modal-badge">About the Curator</span>
@@ -286,6 +376,144 @@ onUnmounted(() => {
           <div class="curator-purpose-note">
             <strong>AvRepo Purpose:</strong> Centralizing fragmented fleet registers, CAAN statutory requirements (CAR-19, SSP, NASP), and mountain ADM models into a clean, searchable digital reference for flight crews, safety managers, auditors, and aviation researchers.
           </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Support & Data Updates Modular Tabbed Dialog Modal -->
+    <dialog
+      id="support-dialog"
+      ref="supportDialogRef"
+      class="curator-modal support-modal"
+      @click="onSupportBackdropClick"
+    >
+      <div class="curator-modal-inner">
+        <button type="button" class="curator-modal-close" aria-label="Close" @click="closeSupportModal">&times;</button>
+        
+        <!-- Segmented Tab Switcher -->
+        <div class="support-modal-tabs">
+          <button
+            type="button"
+            class="support-tab-btn"
+            :class="{ active: activeSupportTab === 'support' }"
+            @click="activeSupportTab = 'support'"
+          >
+            <span>☕ Support AvRepo</span>
+          </button>
+          <button
+            type="button"
+            class="support-tab-btn"
+            :class="{ active: activeSupportTab === 'updates' }"
+            @click="activeSupportTab = 'updates'"
+          >
+            <span>📝 Submit Fleet / Data Update</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Support / Sustainability -->
+        <div v-if="activeSupportTab === 'support'" class="support-tab-pane">
+          <div class="curator-modal-header">
+            <span class="curator-modal-badge">Operational Sustainability</span>
+            <h2 class="curator-modal-name">Support Aviation Safety Infrastructure</h2>
+            <p class="curator-modal-role">Directly funding open-access safety research &amp; real-time register upkeep in Nepal</p>
+          </div>
+
+          <div class="support-body">
+            <p class="curator-modal-lead">
+              AvRepo is a non-commercial, open-access public reference designed to empower pilots, safety officers, auditors, and mountain operators with rapid, unencumbered access to fleet aging data and safety compliance taxonomies.
+            </p>
+
+            <div class="support-qr-card">
+              <div class="support-qr-frame">
+                <img
+                  src="/support-gateway.png"
+                  alt="AvRepo Digital Support Payment Gateway QR"
+                  class="support-qr-image"
+                  width="180"
+                  height="180"
+                />
+                <span class="support-qr-tag">Fonepay / eSewa / Mobile Banking</span>
+              </div>
+              <div class="support-qr-info">
+                <h3 class="qr-info-title">How Contributions Help</h3>
+                <ul class="qr-info-list">
+                  <li><strong>Domain &amp; Infrastructure:</strong> Maintains sub-second CDN response times and uptime for active flight crews.</li>
+                  <li><strong>Register Verification:</strong> Funds manual cross-referencing of airworthiness directives and CAAN aircraft logs.</li>
+                  <li><strong>Institutional Research:</strong> For research partnerships or safety analytics grants, reach out to <a href="mailto:gsacharya.aviation@gmail.com" class="qr-link">gsacharya.aviation@gmail.com</a>.</li>
+                </ul>
+                <div class="qr-sustainability-note">
+                  100% of community contributions are allocated toward independent safety research and server operations.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Fleet & Regulatory Update Form -->
+        <div v-else class="support-tab-pane">
+          <div class="curator-modal-header">
+            <span class="curator-modal-badge">Community Verification</span>
+            <h2 class="curator-modal-name">Submit Fleet or Regulatory Update</h2>
+            <p class="curator-modal-role">Help maintain real-time accuracy across Nepal's civil aviation register</p>
+          </div>
+
+          <div v-if="updateSubmitted" class="update-success-banner">
+            <div class="success-icon">✓</div>
+            <h3 class="success-title">Submission Prepared</h3>
+            <p class="success-desc">
+              Your update details have been prepared for verification with the curator. If your default email client did not open automatically, you can also email directly to <strong>gsacharya.aviation@gmail.com</strong>.
+            </p>
+            <button type="button" class="btn-reset-form" @click="resetForm">
+              Submit Another Correction
+            </button>
+          </div>
+
+          <form v-else class="update-correction-form" @submit.prevent="submitCorrection">
+            <p class="form-instructions">
+              Notice a recent aircraft delivery, lease return, deregistration, MSN discrepancy, or CAAN regulatory circular update? Submit verified details below:
+            </p>
+
+            <div class="form-group">
+              <label for="form-reg">Operator / Aircraft Registration (<code>9N-*</code>) <span class="required">*</span></label>
+              <input
+                id="form-reg"
+                v-model="updateForm.registration"
+                type="text"
+                placeholder="e.g. 9N-AMW (Buddha Air) or Tara Air DHC-6 MSN 619"
+                required
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-nature">Nature of Update / Correction <span class="required">*</span></label>
+              <textarea
+                id="form-nature"
+                v-model="updateForm.nature"
+                rows="4"
+                placeholder="Describe the update: Year of Manufacture correction, engine retrofit, AOC status, or CAR-19 / SSP amendment citation..."
+                required
+                class="form-textarea"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="form-contact">Submitter Email / Role (Optional)</label>
+              <input
+                id="form-contact"
+                v-model="updateForm.contact"
+                type="text"
+                placeholder="e.g. Capt. Sharma / Safety Officer (pilot@airline.com)"
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="form-submit-btn">
+                <span>Send Update to Curator &rarr;</span>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </dialog>
