@@ -2,14 +2,21 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Aviation Knowledge Base',
-  description: 'Aviation operational, fleet, human factors, and regulatory repository for gsacharya.com/avrepo',
+  description: 'Operational Intelligence & Safety Reference for Nepal hosted under gsacharya.com/avrepo',
   base: '/avrepo/',
   cleanUrls: true,
   lastUpdated: true,
 
+  // Permanently lock VitePress in dark mode and disable user toggle
+  appearance: 'force-dark',
+
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/avrepo/airplane-icon.svg' }],
-    ['meta', { name: 'theme-color', content: '#1E5631' }]
+    ['meta', { name: 'theme-color', content: '#0A0A0A' }],
+    ['script', {}, `document.documentElement.classList.add('dark')`],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap' }]
   ],
 
   themeConfig: {
@@ -19,22 +26,23 @@ export default defineConfig({
     },
 
     nav: [
-      { text: 'Dashboard', link: '/' },
-      { text: 'Fleet & YOM', link: '/fleet/nepal-civil-register' },
-      { text: 'CAAN & ICAO Regulations', link: '/regulations/icao-annexes' },
-      { text: 'Safety Taxonomies', link: '/safety-taxonomies/adrep-hfacs' },
-      { text: 'Mountain ADM', link: '/human-factors/decision-making' }
+      { text: 'Overview', link: '/' },
+      { text: 'Fleet Register', link: '/fleet/nepal-civil-register' },
+      { text: 'Regulations', link: '/regulations/icao-annexes' },
+      { text: 'Taxonomies', link: '/safety-taxonomies/adrep-hfacs' },
+      { text: 'Mountain ADM', link: '/human-factors/decision-making' },
+      { text: 'gsacharya.com ↗', link: 'https://gsacharya.com' }
     ],
 
     sidebar: [
       {
-        text: 'Overview',
+        text: 'Repository',
         items: [
-          { text: 'Operational Dashboard', link: '/' }
+          { text: 'Overview & Mission', link: '/' }
         ]
       },
       {
-        text: 'Nepal Civil Fleet',
+        text: 'Civil Aircraft Register',
         items: [
           { text: 'Operator Registry & YOM Tracking', link: '/fleet/nepal-civil-register' }
         ]
@@ -78,7 +86,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Published under gsacharya.com/avrepo aviation documentation framework.',
+      message: 'Curated by Ghanshyam R. Acharya &bull; Operational reference under gsacharya.com/avrepo',
       copyright: 'Copyright © 2026 G.S. Acharya. All rights reserved.'
     },
 

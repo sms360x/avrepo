@@ -1,59 +1,70 @@
 /**
- * SMS360X / ETLx Studio Inspired Design Tokens for avrepo
- * Deep Safety Forest Green (#1E5631), Off-White Canvas (#F9F9FB), Slate Gray (#5A6560)
+ * Dark Editorial Aesthetic for gsacharya.com/avrepo
+ * Deep Editorial Black (#0A0A0A), Dark Charcoal (#161616), Thin Borders (#262626), Muted Gray (#888888)
+ * Elegant Serif Headlines (Newsreader / Playfair / Georgia) & Inter Sans-Serif Body
  */
 
-:root {
-  /* Brand Accents - Deep Safety Forest Green */
-  --vp-c-brand-1: #1E5631;
-  --vp-c-brand-2: #276C3E;
-  --vp-c-brand-3: #164225;
-  --vp-c-brand-soft: rgba(30, 86, 49, 0.08);
+/* ==========================================================================
+   Root Design Tokens (Locked Dark Editorial Palette)
+   ========================================================================== */
 
-  /* Background Colors */
-  --vp-c-bg: #F9F9FB;
-  --vp-c-bg-alt: #FFFFFF;
-  --vp-c-bg-elv: #FFFFFF;
-  --vp-c-bg-soft: #F0F3F1;
+:root,
+html,
+.dark {
+  /* Brand Monochrome / Warm Silver Accents */
+  --vp-c-brand-1: #EDEDED;
+  --vp-c-brand-2: #FFFFFF;
+  --vp-c-brand-3: #CCCCCC;
+  --vp-c-brand-soft: rgba(255, 255, 255, 0.08);
 
-  /* Borders & Dividers */
-  --vp-c-border: #E2E8F0;
-  --vp-c-divider: #E2E8F0;
-  --vp-c-gutter: #E2E8F0;
+  /* Deep Editorial Backgrounds */
+  --vp-c-bg: #0A0A0A;
+  --vp-c-bg-alt: #161616;
+  --vp-c-bg-elv: #161616;
+  --vp-c-bg-soft: #141414;
 
-  /* Text Colors */
-  --vp-c-text-1: #1A2B23; /* Deep forest-black for headings and primary copy */
-  --vp-c-text-2: #5A6560; /* Muted slate-gray for secondary text */
-  --vp-c-text-3: #828E89;
+  /* Subtle Thin Borders */
+  --vp-c-border: #262626;
+  --vp-c-divider: #262626;
+  --vp-c-gutter: #262626;
 
-  /* Typography */
-  --vp-font-family-base: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  /* Typography Colors */
+  --vp-c-text-1: #EDEDED; /* Primary copy & headlines */
+  --vp-c-text-2: #888888; /* Secondary copy & descriptions */
+  --vp-c-text-3: #666666; /* Muted tertiary text & captions */
+
+  /* Font Stacks */
+  --font-serif: "Newsreader", "Playfair Display", "Merriweather", "Georgia", "Cambria", "Times New Roman", serif;
+  --vp-font-family-base: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --vp-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
 
-/* Dark Mode Friendly Tokens */
-.dark {
-  --vp-c-brand-1: #4E9B66;
-  --vp-c-brand-2: #5EB078;
-  --vp-c-brand-3: #3D8252;
-  --vp-c-brand-soft: rgba(78, 155, 102, 0.16);
+/* Force dark canvas */
+html {
+  background-color: #0A0A0A !important;
+  color-scheme: dark !important;
+}
 
-  --vp-c-bg: #0E1612;
-  --vp-c-bg-alt: #14201A;
-  --vp-c-bg-elv: #1A2821;
-  --vp-c-bg-soft: #18241E;
-
-  --vp-c-border: #25352D;
-  --vp-c-divider: #25352D;
-  --vp-c-gutter: #25352D;
-
-  --vp-c-text-1: #EAF2EC;
-  --vp-c-text-2: #9FB2A7;
-  --vp-c-text-3: #72847A;
+body {
+  background-color: #0A0A0A !important;
+  color: var(--vp-c-text-1) !important;
+  font-family: var(--vp-font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
-   Navigation Bar Customization (Minimalist, Clean Pill Links, Subtle Border)
+   Permanent Dark Mode Enforcement: Hide Appearance Switcher
+   ========================================================================== */
+
+.VPSwitchAppearance,
+.VPNavBarAppearance,
+.VPNavScreenAppearance {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Navbar (Minimalist, Thin Border, Editorial Translucent Backdrop)
    ========================================================================== */
 
 .VPNav {
@@ -61,236 +72,254 @@
 }
 
 .VPNavBar {
-  background-color: rgba(249, 249, 251, 0.88) !important;
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background-color: rgba(10, 10, 10, 0.88) !important;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
 }
 
-.dark .VPNavBar {
-  background-color: rgba(14, 22, 18, 0.88) !important;
+.VPNavBarTitle .title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: -0.015em;
+  color: #EDEDED !important;
 }
 
 .VPNavBarMenuLink {
-  font-weight: 500;
-  font-size: 0.92rem;
-  padding: 6px 14px !important;
-  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #888888 !important;
+  padding: 6px 12px !important;
+  border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .VPNavBarMenuLink:hover,
 .VPNavBarMenuLink.active {
-  color: var(--vp-c-brand-1) !important;
-  background-color: var(--vp-c-brand-soft);
-}
-
-.VPNavBarTitle .title {
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-  letter-spacing: -0.015em;
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
 /* ==========================================================================
-   Home Hero Customization (Pill Badges, Rounded Action Buttons)
+   Home Hero Section (Editorial Serif Headlines & Crisp Monochrome Buttons)
    ========================================================================== */
 
 .VPHero {
-  padding: 64px 24px 48px !important;
+  padding: 72px 24px 48px !important;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .VPHero .name {
-  font-size: 2.8rem !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.03em;
-  color: var(--vp-c-text-1) !important;
+  font-family: var(--font-serif) !important;
+  font-size: 3.2rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+  color: #EDEDED !important;
   background: none !important;
-  -webkit-text-fill-color: var(--vp-c-text-1) !important;
+  -webkit-text-fill-color: #EDEDED !important;
+  line-height: 1.15;
 }
 
 .VPHero .text {
-  font-size: 1.8rem !important;
-  font-weight: 600;
-  color: var(--vp-c-brand-1) !important;
-  letter-spacing: -0.02em;
-  margin-top: 6px;
+  font-family: var(--font-serif) !important;
+  font-size: 1.6rem !important;
+  font-weight: 400 !important;
+  font-style: italic;
+  color: #A0A0A0 !important;
+  letter-spacing: -0.01em;
+  margin-top: 10px;
+  line-height: 1.35;
 }
 
 .VPHero .tagline {
-  font-size: 1.15rem;
-  color: var(--vp-c-text-2) !important;
-  max-width: 680px;
-  margin: 18px auto 0;
-  line-height: 1.6;
+  font-family: var(--vp-font-family-base) !important;
+  font-size: 1.08rem !important;
+  color: #888888 !important;
+  max-width: 720px;
+  margin: 20px auto 0;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
-/* Pill Action Buttons */
 .VPHero .actions {
-  margin-top: 32px !important;
-  gap: 12px;
+  margin-top: 36px !important;
+  gap: 14px;
 }
 
 .VPButton {
-  border-radius: 9999px !important;
+  border-radius: 6px !important;
+  font-size: 0.92rem !important;
   font-weight: 500 !important;
-  font-size: 0.95rem !important;
-  padding: 10px 24px !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 10px 22px !important;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease !important;
 }
 
 .VPButton.brand {
-  background-color: var(--vp-c-brand-1) !important;
-  color: #FFFFFF !important;
-  border: 1px solid var(--vp-c-brand-1) !important;
-  box-shadow: 0 2px 8px rgba(30, 86, 49, 0.25);
+  background-color: #EDEDED !important;
+  color: #0A0A0A !important;
+  border: 1px solid #EDEDED !important;
 }
 
 .VPButton.brand:hover {
-  background-color: var(--vp-c-brand-2) !important;
-  border-color: var(--vp-c-brand-2) !important;
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(30, 86, 49, 0.3);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.12);
 }
 
 .VPButton.alt {
-  background-color: var(--vp-c-bg-alt) !important;
-  color: var(--vp-c-text-1) !important;
-  border: 1px solid var(--vp-c-border) !important;
+  background-color: #161616 !important;
+  color: #EDEDED !important;
+  border: 1px solid #262626 !important;
 }
 
 .VPButton.alt:hover {
-  border-color: var(--vp-c-brand-1) !important;
-  color: var(--vp-c-brand-1) !important;
-  background-color: var(--vp-c-brand-soft) !important;
+  background-color: #222222 !important;
+  border-color: #404040 !important;
+  color: #FFFFFF !important;
   transform: translateY(-1px);
 }
 
 /* ==========================================================================
-   Feature Cards (Generous Padding, Soft Borders, Minimalist Studio Card Style)
+   Feature Cards (Dark Charcoal #161616, Thin #262626 Borders)
    ========================================================================== */
 
 .VPFeatures {
   padding: 24px 24px 64px !important;
+  max-width: 1152px;
+  margin: 0 auto;
 }
 
 .VPFeature {
-  background-color: var(--vp-c-bg-alt) !important;
-  border: 1px solid var(--vp-c-border) !important;
-  border-radius: 14px !important;
-  padding: 32px 28px !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background-color: #161616 !important;
+  border: 1px solid #262626 !important;
+  border-radius: 10px !important;
+  padding: 30px 26px !important;
+  transition: all 0.25s ease !important;
+  box-shadow: none !important;
 }
 
 .VPFeature:hover {
-  border-color: var(--vp-c-brand-1) !important;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(30, 86, 49, 0.08) !important;
-}
-
-.dark .VPFeature:hover {
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35) !important;
-}
-
-.VPFeature .icon {
-  width: 48px !important;
-  height: 48px !important;
-  border-radius: 12px !important;
-  background-color: var(--vp-c-brand-soft) !important;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem !important;
-  margin-bottom: 20px !important;
+  border-color: #404040 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6) !important;
 }
 
 .VPFeature .title {
-  font-size: 1.15rem !important;
-  font-weight: 600 !important;
-  color: var(--vp-c-text-1) !important;
+  font-family: var(--font-serif) !important;
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
   letter-spacing: -0.015em;
-  margin-bottom: 10px !important;
+  color: #EDEDED !important;
+  margin-bottom: 12px !important;
 }
 
 .VPFeature .details {
-  font-size: 0.95rem !important;
-  color: var(--vp-c-text-2) !important;
+  font-family: var(--vp-font-family-base) !important;
+  font-size: 0.92rem !important;
+  color: #888888 !important;
   line-height: 1.65 !important;
 }
 
 /* ==========================================================================
-   Documentation & Content Typography, Tables, and Cards
+   Editorial Content Typography, Headings & Text
    ========================================================================== */
 
 .vp-doc h1 {
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--vp-c-text-1);
+  font-family: var(--font-serif) !important;
+  font-weight: 500 !important;
+  font-size: 2.3rem !important;
+  letter-spacing: -0.02em;
+  color: #EDEDED !important;
+  margin-bottom: 1.2rem;
 }
 
 .vp-doc h2 {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--vp-c-text-1);
+  font-family: var(--font-serif) !important;
+  font-weight: 500 !important;
+  font-size: 1.65rem !important;
+  letter-spacing: -0.015em;
+  color: #EDEDED !important;
   border-top: none !important;
-  padding-top: 2rem !important;
-  margin-top: 2.5rem !important;
-  border-bottom: 1px solid var(--vp-c-border);
-  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #262626 !important;
+  padding-bottom: 0.6rem;
+  margin-top: 2.8rem !important;
 }
 
 .vp-doc h3 {
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  color: var(--vp-c-text-1);
+  font-family: var(--font-serif) !important;
+  font-weight: 500 !important;
+  font-size: 1.28rem !important;
+  letter-spacing: -0.01em;
+  color: #E0E0E0 !important;
+  margin-top: 2rem !important;
+}
+
+.vp-doc h4 {
+  font-family: var(--font-serif) !important;
+  font-weight: 500;
+  color: #D4D4D4;
 }
 
 .vp-doc p,
 .vp-doc li {
-  line-height: 1.7;
-  color: var(--vp-c-text-1);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #C0C0C0;
 }
 
 .vp-doc strong {
-  color: var(--vp-c-text-1);
+  color: #EDEDED;
   font-weight: 600;
 }
 
 .vp-doc a {
-  color: var(--vp-c-brand-1);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.15s ease;
+  color: #EDEDED;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #404040;
+  font-weight: 400;
+  transition: all 0.15s ease;
 }
 
 .vp-doc a:hover {
-  color: var(--vp-c-brand-2);
-  text-decoration: underline;
+  color: #FFFFFF;
+  text-decoration-color: #EDEDED;
 }
 
-/* Clean Professional Table Containers */
+.vp-doc hr {
+  border-color: #262626 !important;
+  margin: 36px 0;
+}
+
+/* ==========================================================================
+   Editorial Tables (Charcoal Surface #161616 with Subtle Hairline Borders)
+   ========================================================================== */
+
 .vp-doc table {
   width: 100%;
   display: table !important;
-  margin: 24px 0 !important;
+  margin: 28px 0 !important;
   border-collapse: separate !important;
   border-spacing: 0 !important;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--vp-c-border) !important;
-  background-color: var(--vp-c-bg-alt);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  border: 1px solid #262626 !important;
+  background-color: #161616;
 }
 
 .vp-doc th {
-  background-color: var(--vp-c-bg-soft) !important;
-  color: var(--vp-c-text-1) !important;
-  font-weight: 600 !important;
-  font-size: 0.88rem !important;
+  background-color: #121212 !important;
+  color: #A0A0A0 !important;
+  font-weight: 500 !important;
+  font-size: 0.84rem !important;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 14px 18px !important;
-  border-bottom: 1px solid var(--vp-c-border) !important;
-  border-right: 1px solid var(--vp-c-border);
+  letter-spacing: 0.05em;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid #262626 !important;
+  border-right: 1px solid #262626;
 }
 
 .vp-doc th:last-child {
@@ -298,11 +327,11 @@
 }
 
 .vp-doc td {
-  padding: 14px 18px !important;
-  font-size: 0.92rem !important;
-  border-bottom: 1px solid var(--vp-c-border) !important;
-  border-right: 1px solid var(--vp-c-border);
-  color: var(--vp-c-text-1);
+  padding: 12px 16px !important;
+  font-size: 0.9rem !important;
+  border-bottom: 1px solid #202020 !important;
+  border-right: 1px solid #202020;
+  color: #B8B8B8;
 }
 
 .vp-doc tr:last-child td {
@@ -314,82 +343,95 @@
 }
 
 .vp-doc tr:hover td {
-  background-color: var(--vp-c-bg-soft);
-}
-
-/* Inline Code & Badges */
-.vp-doc :not(pre) > code {
-  color: var(--vp-c-brand-1);
-  background-color: var(--vp-c-brand-soft);
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 0.88em;
-  font-weight: 500;
-  border: 1px solid rgba(30, 86, 49, 0.12);
-}
-
-.dark .vp-doc :not(pre) > code {
-  border-color: rgba(78, 155, 102, 0.2);
-}
-
-/* Sidebar Customization */
-.VPSidebar {
-  border-right: 1px solid var(--vp-c-border) !important;
-  background-color: var(--vp-c-bg) !important;
-}
-
-.VPSidebarItem.is-active > .item .link {
-  color: var(--vp-c-brand-1) !important;
-  font-weight: 600;
-}
-
-.VPSidebarItem.is-active > .item .link .text {
-  background-color: var(--vp-c-brand-soft);
-  padding: 4px 10px;
-  border-radius: 8px;
-}
-
-/* Search Box Modal Customization */
-.VPLocalSearchBox .modal {
-  border-radius: 16px !important;
-  border: 1px solid var(--vp-c-border) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
-}
-
-.VPLocalSearchBox .search-keyboard-shortcuts kbd {
-  border-radius: 6px;
-  border: 1px solid var(--vp-c-border);
-  background: var(--vp-c-bg-soft);
+  background-color: #1B1B1B;
 }
 
 /* ==========================================================================
-   SMS360X / ETLx Studio Pill Badges & Container Cards
+   Code Blocks & Badges (Monochrome Charcoal Styling)
    ========================================================================== */
 
-.studio-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  border: 1px solid rgba(30, 86, 49, 0.18);
-  border-radius: 9999px;
-  padding: 4px 14px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+.vp-doc :not(pre) > code {
+  color: #E5E5E5 !important;
+  background-color: #1A1A1A !important;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.86em;
+  font-weight: 400;
+  border: 1px solid #2B2B2B !important;
 }
 
-.dark .studio-pill {
-  border-color: rgba(78, 155, 102, 0.28);
+div[class*='language-'] {
+  border: 1px solid #262626 !important;
+  border-radius: 8px !important;
+  background-color: #121212 !important;
 }
 
-.studio-card {
-  background-color: var(--vp-c-bg-alt);
-  border: 1px solid var(--vp-c-border);
-  border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-  margin: 20px 0;
+/* ==========================================================================
+   Sidebar Customization (Seamless Editorial Black #0A0A0A)
+   ========================================================================== */
+
+.VPSidebar {
+  border-right: 1px solid #262626 !important;
+  background-color: #0A0A0A !important;
 }
 
+.VPSidebarItem.is-active > .item .link {
+  color: #FFFFFF !important;
+  font-weight: 500;
+}
+
+.VPSidebarItem.is-active > .item .link .text {
+  background-color: #161616;
+  border-radius: 6px;
+  padding: 4px 10px;
+  border: 1px solid #262626;
+}
+
+.VPSidebarItem .item .link {
+  color: #888888;
+  transition: color 0.15s ease;
+}
+
+.VPSidebarItem .item .link:hover {
+  color: #EDEDED;
+}
+
+/* ==========================================================================
+   Search Modal (Editorial Charcoal)
+   ========================================================================== */
+
+.VPLocalSearchBox .modal {
+  border-radius: 10px !important;
+  border: 1px solid #262626 !important;
+  background-color: #161616 !important;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.8) !important;
+}
+
+.VPLocalSearchBox .search-bar {
+  border-color: #262626 !important;
+  background-color: #0E0E0E !important;
+}
+
+.VPLocalSearchBox .search-keyboard-shortcuts kbd {
+  border-radius: 4px;
+  border: 1px solid #262626;
+  background: #1A1A1A;
+  color: #888888;
+}
+
+.VPLocalSearchBox .search-actions button:not([disabled]):hover {
+  color: #FFFFFF !important;
+}
+
+/* Clean Footer */
+.VPFooter {
+  border-top: 1px solid #262626 !important;
+  background-color: #0A0A0A !important;
+  color: #666666 !important;
+}
+
+.VPFooter .message,
+.VPFooter .copyright {
+  color: #666666 !important;
+  font-size: 0.85rem;
+}
