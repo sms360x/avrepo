@@ -1,52 +1,105 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const isModalOpen = ref(false)
+const dialogRef = ref(null)
 const searchInput = ref('')
 
 function openModal() {
-  isModalOpen.value = true
+  if (typeof window === 'undefined') return
+  try {
+    if (dialogRef.value?.showModal) {
+      dialogRef.value.showModal()
+    } else {
+      const dialog = document.getElementById('curator-dialog')
+      if (dialog?.showModal) {
+        dialog.showModal()
+      } else if (dialog) {
+        dialog.setAttribute('open', '')
+      }
+    }
+  } catch (err) {
+    console.warn('Modal open error:', err)
+  }
 }
 
 function closeModal() {
-  isModalOpen.value = false
+  if (typeof window === 'undefined') return
+  try {
+    if (dialogRef.value?.close) {
+      dialogRef.value.close()
+    } else {
+      const dialog = document.getElementById('curator-dialog')
+      if (dialog?.close) {
+        dialog.close()
+      } else if (dialog) {
+        dialog.removeAttribute('open')
+      }
+    }
+  } catch (err) {
+    console.warn('Modal close error:', err)
+  }
 }
 
-function handleKeydown(e) {
-  if (e.key === 'Escape' && isModalOpen.value) {
+function onBackdropClick(e) {
+  if (e.target === dialogRef.value || e.target?.id === 'curator-dialog') {
     closeModal()
   }
 }
 
-function triggerSearch(initialQuery = '') {
-  const searchBtn = document.querySelector('#local-search button') || document.querySelector('.DocSearch-Button')
+function triggerSearch(query = '') {
+  if (typeof window === 'undefined') return
+  const q = typeof query === 'string' ? query : searchInput.value
+
+  const searchBtn = document.querySelector('#local-search button') 
+    || document.querySelector('.DocSearch-Button') 
+    || document.querySelector('.VPNavBarSearch button')
+
   if (searchBtn) {
     searchBtn.click()
-    if (initialQuery) {
+    if (q) {
       setTimeout(() => {
-        const modalInput = document.querySelector('.VPLocalSearchBox input.search-input') || document.querySelector('.DocSearch-Input')
+        const modalInput = document.querySelector('.VPLocalSearchBox input.search-input') 
+          || document.querySelector('.DocSearch-Input')
         if (modalInput) {
-          modalInput.value = initialQuery
+          modalInput.value = q
           modalInput.dispatchEvent(new Event('input', { bubbles: true }))
         }
       }, 100)
     }
   } else {
-    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true, bubbles: true }))
+    window.dispatchEvent(new KeyboardEvent('keydown', {
+      key: 'k',
+      code: 'KeyK',
+      keyCode: 75,
+      which: 75,
+      ctrlKey: true,
+      metaKey: true,
+      bubbles: true
+    }))
   }
 }
 
 function onSearchSubmit(e) {
-  e.preventDefault()
+  if (e) e.preventDefault()
   triggerSearch(searchInput.value)
 }
 
+function handleKeydown(e) {
+  if (e.key === 'Escape') {
+    closeModal()
+  }
+}
+
 onMounted(() => {
-  window.addEventListener('keydown', handleKeydown)
+  if (typeof window !== 'undefined') {
+    window.addEventListener('keydown', handleKeydown)
+  }
 })
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeydown)
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('keydown', handleKeydown)
+  }
 })
 </script>
 
@@ -96,6 +149,9 @@ onUnmounted(() => {
             src="/ga-logo.png"
             alt="Ghanshyam Acharya Aviation Safety Crest"
             class="wiki-logo-img"
+            width="220"
+            height="220"
+            loading="eager"
           />
         </div>
         <div class="wiki-center-caption">
@@ -133,7 +189,7 @@ onUnmounted(() => {
 
     <!-- Central Wikipedia-Style Search Bar -->
     <div class="wiki-search-section">
-      <form class="wiki-search-form" @submit="onSearchSubmit">
+      <form class="wiki-search-form" @submit.prevent="onSearchSubmit">
         <div class="wiki-search-box" @click="triggerSearch(searchInput)">
           <span class="wiki-search-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -147,6 +203,8 @@ onUnmounted(() => {
             placeholder="Search tail numbers (9N-*), operators, CAR-19, ADREP..."
             class="wiki-search-input"
             aria-label="Search aviation knowledge base"
+            @click.stop
+            @keydown.enter.prevent="onSearchSubmit"
           />
           <button type="button" class="wiki-search-submit" @click.stop="triggerSearch(searchInput)">
             Search
@@ -184,52 +242,55 @@ onUnmounted(() => {
       </p>
     </footer>
 
-    <!-- Modular Glass-Morphism Curator Popup Modal -->
-    <Teleport to="body">
-      <div v-if="isModalOpen" class="curator-modal-overlay" @click.self="closeModal">
-        <div class="curator-modal-card" role="dialog" aria-modal="true">
-          <button type="button" class="curator-modal-close" aria-label="Close" @click="closeModal">&times;</button>
-          
-          <div class="curator-modal-header">
-            <span class="curator-modal-badge">About the Curator</span>
-            <h2 class="curator-modal-name">Ghanshyam R. Acharya</h2>
-            <p class="curator-modal-role">Human Factors Analyst &bull; Aviation Safety Consultant &bull; HRO Specialist</p>
+    <!-- Native Glass-Morphism Curator Dialog Modal (No Teleport - 100% Hydration Safe) -->
+    <dialog
+      id="curator-dialog"
+      ref="dialogRef"
+      class="curator-modal"
+      @click="onBackdropClick"
+    >
+      <div class="curator-modal-inner">
+        <button type="button" class="curator-modal-close" aria-label="Close" @click="closeModal">&times;</button>
+        
+        <div class="curator-modal-header">
+          <span class="curator-modal-badge">About the Curator</span>
+          <h2 class="curator-modal-name">Ghanshyam R. Acharya</h2>
+          <p class="curator-modal-role">Human Factors Analyst &bull; Aviation Safety Consultant &bull; HRO Specialist</p>
+        </div>
+
+        <div class="curator-modal-body">
+          <p class="curator-modal-lead">
+            This repository is curated by Ghanshyam R. Acharya, drawing on nearly five decades of operational leadership and flight safety oversight across Nepal's high-complexity Himalayan flight environment.
+          </p>
+
+          <div class="curator-highlights-grid">
+            <div class="highlight-item">
+              <strong>Certified Human Factors Instructor</strong>
+              <span>Specializing in Aeronautical Decision Making (ADM) and Threat &amp; Error Management (TEM) for mountain aircrews.</span>
+            </div>
+            <div class="highlight-item">
+              <strong>Trained Accident Investigator (MoCTCA)</strong>
+              <span>Expertise in ICAO Annex 13 protocols, ADREP occurrence taxonomies, and systemic causal investigation.</span>
+            </div>
+            <div class="highlight-item">
+              <strong>Former CEO &amp; Accountable Manager</strong>
+              <span>Former Chief Executive Officer, Senior General Manager, and Accountable Manager of Sita Air (STOL &amp; trunk operations).</span>
+            </div>
+            <div class="highlight-item">
+              <strong>Former DCA Flight Safety Inspector</strong>
+              <span>Conducted regulatory flight surveillance, operator compliance audits, and PELR licensing with the Department of Civil Aviation (CAAN).</span>
+            </div>
           </div>
 
-          <div class="curator-modal-body">
-            <p class="curator-modal-lead">
-              This repository is curated by Ghanshyam R. Acharya, drawing on nearly five decades of operational leadership and flight safety oversight across Nepal's high-complexity Himalayan flight environment.
-            </p>
+          <div class="curator-newsletter-note">
+            <strong>The Safety Layer:</strong> Author of the bi-weekly aviation safety newsletter analyzing operational hazards, regulatory enforcement, and systems-safety resilience in South Asian aviation.
+          </div>
 
-            <div class="curator-highlights-grid">
-              <div class="highlight-item">
-                <strong>Certified Human Factors Instructor</strong>
-                <span>Specializing in Aeronautical Decision Making (ADM) and Threat &amp; Error Management (TEM) for mountain aircrews.</span>
-              </div>
-              <div class="highlight-item">
-                <strong>Trained Accident Investigator (MoCTCA)</strong>
-                <span>Expertise in ICAO Annex 13 protocols, ADREP occurrence taxonomies, and systemic causal investigation.</span>
-              </div>
-              <div class="highlight-item">
-                <strong>Former CEO &amp; Accountable Manager</strong>
-                <span>Former Chief Executive Officer, Senior General Manager, and Accountable Manager of Sita Air (STOL &amp; trunk operations).</span>
-              </div>
-              <div class="highlight-item">
-                <strong>Former DCA Flight Safety Inspector</strong>
-                <span>Conducted regulatory flight surveillance, operator compliance audits, and PELR licensing with the Department of Civil Aviation (CAAN).</span>
-              </div>
-            </div>
-
-            <div class="curator-newsletter-note">
-              <strong>The Safety Layer:</strong> Author of the bi-weekly aviation safety newsletter analyzing operational hazards, regulatory enforcement, and systems-safety resilience in South Asian aviation.
-            </div>
-
-            <div class="curator-purpose-note">
-              <strong>AvRepo Purpose:</strong> Centralizing fragmented fleet registers, CAAN statutory requirements (CAR-19, SSP, NASP), and mountain ADM models into a clean, searchable digital reference for flight crews, safety managers, auditors, and aviation researchers.
-            </div>
+          <div class="curator-purpose-note">
+            <strong>AvRepo Purpose:</strong> Centralizing fragmented fleet registers, CAAN statutory requirements (CAR-19, SSP, NASP), and mountain ADM models into a clean, searchable digital reference for flight crews, safety managers, auditors, and aviation researchers.
           </div>
         </div>
       </div>
-    </Teleport>
+    </dialog>
   </div>
 </template>
