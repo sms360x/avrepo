@@ -16,10 +16,13 @@ hero:
 features:
   - title: ✈️ Nepal Civil Fleet & Aging
     details: Structured registers tracking active commercial turboprops, international jets, mountain STOL aircraft, and rotor-wing fleets with Year of Manufacture (YOM) vintage tracking.
+    link: /fleet/nepal-civil-register
   - title: 📜 CAAN & ICAO Regulatory Hub
     details: Direct compliance mapping connecting ICAO Annexes to Civil Aviation Requirements (CAR-19, SSP Nepal, NASP, and AEPPM enforcement frameworks).
+    link: /regulations/icao-annexes
   - title: 🧠 Safety Taxonomies & Mountain ADM
     details: Practical application of ICAO ADREP categories, HFACS error frameworks, and high-altitude aeronautical decision-making (ADM) tailored to Himalayan airspace.
+    link: /safety-taxonomies/adrep-hfacs
 ---
 
 ## What is AvRepo?
