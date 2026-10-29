@@ -35,6 +35,13 @@ features:
     link: /human-factors/decision-making
 ---
 
+<div style="display: flex; justify-content: center; margin: 24px 0 16px;">
+  <span class="studio-pill">
+    <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: var(--vp-c-brand-1);"></span>
+    SMS360X &bull; Aviation Operations & Safety Architecture
+  </span>
+</div>
+
 ## Navigation & Quick Search Index
 
 Use the client-side search bar (<kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>Cmd</kbd> + <kbd>K</kbd>) to instantly locate tail numbers, airline callsigns, CAAN CAR clauses, or mountain operational directives.

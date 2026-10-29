@@ -9,7 +9,7 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/avrepo/airplane-icon.svg' }],
-    ['meta', { name: 'theme-color', content: '#0284c7' }]
+    ['meta', { name: 'theme-color', content: '#1E5631' }]
   ],
 
   themeConfig: {
