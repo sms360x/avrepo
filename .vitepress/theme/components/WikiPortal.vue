@@ -237,7 +237,7 @@ onUnmounted(() => {
           />
         </div>
         <div class="wiki-center-caption">
-          <span class="wiki-center-badge">Aviation Repository</span>
+          <span class="wiki-center-badge">An Aviation Repository</span>
         </div>
       </section>
 
@@ -284,7 +284,7 @@ onUnmounted(() => {
             type="text"
             placeholder="Search tail numbers (9N-*), operators, CAR-19, ADREP..."
             class="wiki-search-input"
-            aria-label="Search aviation knowledge base"
+            aria-label="Search aviation repository"
             @click.stop
             @keydown.enter.prevent="onSearchSubmit"
           />
@@ -322,8 +322,7 @@ onUnmounted(() => {
         Operational &amp; Educational Reference Only. Does not supersede official aircraft flight manuals (AFM), airline AOC manuals, or statutory directives of the Civil Aviation Authority of Nepal (CAAN).
       </p>
       <p class="copyright-line">
-        Curated by Ghanshyam R. Acharya &bull; &copy; 2026 G.S. Acharya. All rights reserved &bull;
-        <a href="https://gsacharya.com" target="_blank" rel="noopener">gsacharya.com</a> &bull;
+        Curated by <a href="https://gsacharya.com" target="_blank" rel="noopener">Ghanshyam Acharya</a> &bull;
         <button type="button" class="footer-inline-btn" @click="openSupportModal('updates')">Submit Data Correction</button> &bull;
         <button type="button" class="footer-inline-btn" @click="openSupportModal('support')">Support AvRepo</button>
       </p>
@@ -432,7 +431,7 @@ onUnmounted(() => {
                   width="180"
                   height="180"
                 />
-                <span class="support-qr-tag">Fonepay / eSewa / Mobile Banking</span>
+                <span class="support-qr-tag">Scan to support open-access aviation data infrastructure</span>
               </div>
               <div class="support-qr-info">
                 <h3 class="qr-info-title">How Contributions Help</h3>

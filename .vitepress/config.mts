@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Aviation Knowledge Base',
+  title: 'An Aviation Repository',
   description: 'Operational Intelligence & Safety Reference for Nepal hosted at avrepo.gsacharya.com',
   base: '/',
   cleanUrls: true,
@@ -19,7 +19,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    siteTitle: 'Aviation Knowledge Base',
+    siteTitle: 'An Aviation Repository',
     logo: {
       text: '✈'
     },
@@ -57,9 +57,8 @@ export default defineConfig({
       }
     },
 
-    footer: {
-      message: 'Curated by Ghanshyam R. Acharya &bull; Operational reference at avrepo.gsacharya.com',
-      copyright: 'Copyright © 2026 G.S. Acharya. All rights reserved.'
+        footer: {
+      message: 'Curated by <a href="https://gsacharya.com" target="_blank" rel="noopener">Ghanshyam Acharya</a>'
     },
 
     docFooter: {

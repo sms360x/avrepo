@@ -1,4 +1,4 @@
-# Aviation Knowledge Base (`avrepo`)
+# An Aviation Repository (`avrepo`)
 
 [![Deploy Aviation Knowledge Base](https://github.com/gsacharya/avrepo/actions/workflows/deploy.yml/badge.svg)](https://github.com/gsacharya/avrepo/actions/workflows/deploy.yml)
 

@@ -1,4 +1,4 @@
-name: Deploy Aviation Knowledge Base
+name: Deploy Aviation Repository
 
 on:
   push:
