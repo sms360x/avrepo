@@ -12,6 +12,8 @@ const updateForm = ref({
   contact: ''
 })
 const updateSubmitted = ref(false)
+const isSubmitting = ref(false)
+const submitError = ref('')
 
 function openCuratorModal() {
   if (typeof window === 'undefined') return
@@ -105,27 +107,35 @@ function handleKeydown(e) {
   }
 }
 
-function submitCorrection() {
+async function submitCorrection(e) {
   if (!updateForm.value.registration && !updateForm.value.nature) return
-  const reg = updateForm.value.registration || 'General Civil Register'
-  const subject = encodeURIComponent(`[AvRepo Data Update] ${reg}`)
-  const body = encodeURIComponent(
-`Aircraft / Operator Registration:
-${updateForm.value.registration}
+  isSubmitting.value = true
+  submitError.value = ''
 
-Nature of Update / Correction:
-${updateForm.value.nature}
+  try {
+    const formElement = e?.target || document.getElementById('web3form-correction')
+    const formData = new FormData(formElement)
+    formData.set('access_key', '594e76be-5bfc-4afd-b0ea-e5b1b7f0bb8d')
+    formData.set('apikey', '594e76be-5bfc-4afd-b0ea-e5b1b7f0bb8d')
+    formData.set('subject', `New Fleet/Regulatory Update - An Aviation Repository: ${updateForm.value.registration || 'General'}`)
+    formData.set('from_name', 'An Aviation Repository')
 
-Submitter Contact / Role:
-${updateForm.value.contact || 'Not provided'}
-
----
-Submitted via avrepo.gsacharya.com`
-  )
-  if (typeof window !== 'undefined') {
-    window.location.href = `mailto:gsacharya.aviation@gmail.com?subject=${subject}&body=${body}`
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    const result = await response.json()
+    if (result.success || response.ok) {
+      updateSubmitted.value = true
+    } else {
+      submitError.value = result.message || 'Submission could not be completed. Please try again or email directly.'
+    }
+  } catch (err) {
+    console.error('Web3Forms submission error:', err)
+    submitError.value = 'Network issue submitting update. You can also email directly to gsacharya.aviation@gmail.com'
+  } finally {
+    isSubmitting.value = false
   }
-  updateSubmitted.value = true
 }
 
 function resetForm() {
@@ -134,6 +144,7 @@ function resetForm() {
     nature: '',
     contact: ''
   }
+  submitError.value = ''
   updateSubmitted.value = false
 }
 
@@ -458,25 +469,43 @@ onUnmounted(() => {
 
           <div v-if="updateSubmitted" class="update-success-banner">
             <div class="success-icon">✓</div>
-            <h3 class="success-title">Submission Prepared</h3>
+            <h3 class="success-title">Update Received</h3>
             <p class="success-desc">
-              Your update details have been prepared for verification with the curator. If your default email client did not open automatically, you can also email directly to <strong>gsacharya.aviation@gmail.com</strong>.
+              Thank you for contributing to Nepal's open civil aviation safety intelligence. Your data submission has been transmitted directly to the curator desk via Web3Forms for verification against CAAN circulars and operator records.
             </p>
             <button type="button" class="btn-reset-form" @click="resetForm">
               Submit Another Correction
             </button>
           </div>
 
-          <form v-else class="update-correction-form" @submit.prevent="submitCorrection">
+          <form
+            v-else
+            id="web3form-correction"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="update-correction-form space-y-4"
+            @submit.prevent="submitCorrection"
+          >
+            <input type="hidden" name="apikey" value="594e76be-5bfc-4afd-b0ea-e5b1b7f0bb8d" />
+            <input type="hidden" name="access_key" value="594e76be-5bfc-4afd-b0ea-e5b1b7f0bb8d" />
+            <input type="hidden" name="subject" value="New Fleet/Regulatory Update - An Aviation Repository" />
+            <input type="hidden" name="from_name" value="An Aviation Repository" />
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
             <p class="form-instructions">
               Notice a recent aircraft delivery, lease return, deregistration, MSN discrepancy, or CAAN regulatory circular update? Submit verified details below:
             </p>
+
+            <div v-if="submitError" class="form-error-msg">
+              {{ submitError }}
+            </div>
 
             <div class="form-group">
               <label for="form-reg">Operator / Aircraft Registration (<code>9N-*</code>) <span class="required">*</span></label>
               <input
                 id="form-reg"
                 v-model="updateForm.registration"
+                name="registration"
                 type="text"
                 placeholder="e.g. 9N-AMW (Buddha Air) or Tara Air DHC-6 MSN 619"
                 required
@@ -489,6 +518,7 @@ onUnmounted(() => {
               <textarea
                 id="form-nature"
                 v-model="updateForm.nature"
+                name="nature_of_update"
                 rows="4"
                 placeholder="Describe the update: Year of Manufacture correction, engine retrofit, AOC status, or CAR-19 / SSP amendment citation..."
                 required
@@ -501,6 +531,7 @@ onUnmounted(() => {
               <input
                 id="form-contact"
                 v-model="updateForm.contact"
+                name="submitter_contact"
                 type="text"
                 placeholder="e.g. Capt. Sharma / Safety Officer (pilot@airline.com)"
                 class="form-input"
@@ -508,8 +539,9 @@ onUnmounted(() => {
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="form-submit-btn">
-                <span>Send Update to Curator &rarr;</span>
+              <button type="submit" class="form-submit-btn" :disabled="isSubmitting">
+                <span v-if="isSubmitting">Transmitting Update...</span>
+                <span v-else>Send Update to Curator &rarr;</span>
               </button>
             </div>
           </form>
