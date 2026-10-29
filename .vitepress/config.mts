@@ -32,38 +32,12 @@ export default defineConfig({
       { text: 'Mountain ADM', link: '/human-factors/decision-making' }
     ],
 
-    sidebar: [
-      {
-        text: 'Repository',
-        items: [
-          { text: 'Overview & Mission', link: '/' }
-        ]
-      },
-      {
-        text: 'Civil Aircraft Register',
-        items: [
-          { text: 'Operator Registry & YOM Tracking', link: '/fleet/nepal-civil-register' }
-        ]
-      },
-      {
-        text: 'Regulatory Architecture',
-        items: [
-          { text: 'ICAO Annexes & CAAN Framework', link: '/regulations/icao-annexes' }
-        ]
-      },
-      {
-        text: 'Safety & Taxonomies',
-        items: [
-          { text: 'ADREP & HFACS (Nepal Airspace)', link: '/safety-taxonomies/adrep-hfacs' }
-        ]
-      },
-      {
-        text: 'Operational Human Factors',
-        items: [
-          { text: 'Mountain Aeronautical Decision Making', link: '/human-factors/decision-making' }
-        ]
-      }
-    ],
+    sidebar: false,
+
+    outline: {
+      level: [2, 3],
+      label: 'On this page'
+    },
 
     search: {
       provider: 'local',

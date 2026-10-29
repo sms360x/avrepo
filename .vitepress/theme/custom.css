@@ -1221,3 +1221,96 @@ dialog.curator-modal[open] {
   color: #FFFFFF;
 }
 
+/* ==========================================================================
+   Full-Width Editorial Documentation Layout (No Left Sidebar, Right Aside TOC Preserved)
+   ========================================================================== */
+
+/* Completely hide sidebar components globally */
+.VPSidebar,
+.VPBackdrop {
+  display: none !important;
+}
+
+/* Ensure no sidebar padding or offset on layout */
+.VPContent.has-sidebar {
+  padding-left: 0 !important;
+}
+
+/* Expand outer documentation container to full editorial width */
+.VPDoc .container,
+.VPDoc:not(.has-sidebar) .container {
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding: 0 40px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 48px !important;
+}
+
+/* Main documentation content column fills the available space from the left */
+.VPDoc .content,
+.VPDoc:not(.has-sidebar) .content {
+  max-width: 100% !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+/* Allow content-container to expand for wide fleet matrices and tables */
+.VPDoc.has-aside .content-container,
+.VPDoc:not(.has-sidebar) .content-container,
+.VPDoc .content-container {
+  max-width: 1040px !important;
+  margin: 0 !important;
+}
+
+/* Right-side Aside ("On this page") Docked Cleanly */
+.VPDoc .aside {
+  flex-shrink: 0 !important;
+  width: 256px !important;
+}
+
+.VPDocAsideOutline .outline-title {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #EDEDED;
+}
+
+.VPDocOutlineItem .outline-link {
+  font-size: 0.84rem;
+  color: #888888;
+  transition: color 0.15s ease;
+}
+
+.VPDocOutlineItem .outline-link:hover,
+.VPDocOutlineItem .outline-link.active {
+  color: #EDEDED;
+}
+
+/* Full-width editorial tables with clean borders */
+.VPDoc .vp-doc table {
+  width: 100% !important;
+  display: table !important;
+  margin: 24px 0 !important;
+}
+
+@media (max-width: 1200px) {
+  .VPDoc .container,
+  .VPDoc:not(.has-sidebar) .container {
+    padding: 0 24px !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .VPDoc .container,
+  .VPDoc:not(.has-sidebar) .container {
+    padding: 0 20px !important;
+  }
+  .VPDoc .vp-doc table {
+    display: block !important;
+    overflow-x: auto !important;
+  }
+}
+
