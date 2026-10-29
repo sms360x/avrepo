@@ -549,23 +549,23 @@ div[class*='language-'] {
 }
 
 .wiki-logo-container {
-  width: 210px;
-  height: 210px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  padding: 6px;
-  background: #141414;
-  border: 1px solid #2E2E2E;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
-  transition: all 0.3s ease;
+  padding: 4px;
+  background: #0E0E0E;
+  border: 1px solid #333333;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9), 0 0 28px rgba(212, 175, 55, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .wiki-logo-container:hover {
-  transform: scale(1.03);
-  border-color: #484848;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.95);
+  transform: scale(1.035);
+  border-color: #555555;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.95), 0 0 36px rgba(212, 175, 55, 0.22);
 }
 
 .wiki-logo-img {
@@ -582,6 +582,124 @@ div[class*='language-'] {
   text-transform: uppercase;
   color: #888888;
   font-weight: 500;
+}
+
+/* ==========================================================================
+   Central Wikipedia-Style Search Bar & Query Chips
+   ========================================================================== */
+
+.wiki-search-section {
+  max-width: 660px;
+  margin: 0 auto 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.wiki-search-form {
+  width: 100%;
+}
+
+.wiki-search-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #141414;
+  border: 1px solid #2B2B2B;
+  border-radius: 8px;
+  padding: 4px 6px 4px 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+  cursor: text;
+}
+
+.wiki-search-box:hover,
+.wiki-search-box:focus-within {
+  border-color: #444444;
+  background-color: #171717;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+}
+
+.wiki-search-icon {
+  color: #777777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.wiki-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: #EDEDED;
+  font-family: var(--vp-font-family-base);
+  padding: 8px 0;
+}
+
+.wiki-search-input::placeholder {
+  color: #666666;
+  font-size: 0.92rem;
+}
+
+.wiki-search-submit {
+  background-color: #222222;
+  border: 1px solid #333333;
+  color: #EDEDED;
+  font-size: 0.86rem;
+  font-weight: 500;
+  padding: 7px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.wiki-search-submit:hover {
+  background-color: #EDEDED;
+  color: #0A0A0A;
+  border-color: #EDEDED;
+}
+
+/* Quick Search Chips */
+.wiki-search-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.chips-label {
+  font-size: 0.78rem;
+  color: #666666;
+  margin-right: 4px;
+}
+
+.search-chip {
+  background-color: #141414;
+  border: 1px solid #242424;
+  color: #888888;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.search-chip:hover {
+  color: #EDEDED;
+  border-color: #404040;
+  background-color: #1A1A1A;
+}
+
+.wiki-curator-trigger-wrap {
+  margin-top: 8px;
 }
 
 .curator-bio-trigger {

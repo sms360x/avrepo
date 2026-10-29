@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const isModalOpen = ref(false)
+const searchInput = ref('')
 
 function openModal() {
   isModalOpen.value = true
@@ -17,6 +18,29 @@ function handleKeydown(e) {
   }
 }
 
+function triggerSearch(initialQuery = '') {
+  const searchBtn = document.querySelector('#local-search button') || document.querySelector('.DocSearch-Button')
+  if (searchBtn) {
+    searchBtn.click()
+    if (initialQuery) {
+      setTimeout(() => {
+        const modalInput = document.querySelector('.VPLocalSearchBox input.search-input') || document.querySelector('.DocSearch-Input')
+        if (modalInput) {
+          modalInput.value = initialQuery
+          modalInput.dispatchEvent(new Event('input', { bubbles: true }))
+        }
+      }, 100)
+    }
+  } else {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true, bubbles: true }))
+  }
+}
+
+function onSearchSubmit(e) {
+  e.preventDefault()
+  triggerSearch(searchInput.value)
+}
+
 onMounted(() => {
   window.addEventListener('keydown', handleKeydown)
 })
@@ -28,7 +52,7 @@ onUnmounted(() => {
 
 <template>
   <div class="wiki-portal-wrapper">
-    <!-- Header -->
+    <!-- Portal Header -->
     <header class="wiki-portal-header">
       <h1 class="wiki-portal-title">AvRepo</h1>
       <p class="wiki-portal-subtitle">
@@ -36,7 +60,7 @@ onUnmounted(() => {
       </p>
     </header>
 
-    <!-- Symmetrical Axis Menu -->
+    <!-- Symmetrical Wikipedia-Style Axis Portal -->
     <main class="wiki-portal-axis">
       <!-- Left Column: Fleet & Regulations -->
       <section class="wiki-axis-column left">
@@ -65,17 +89,18 @@ onUnmounted(() => {
         </a>
       </section>
 
-      <!-- Center Axis: Circular GA Logo Emblem & Curator Trigger -->
+      <!-- Center Axis: Circular GA Logo Crest -->
       <section class="wiki-axis-center">
         <div class="wiki-logo-container">
-          <img src="/ga-logo.png" alt="Ghanshyam Acharya Aviation Safety Crest" class="wiki-logo-img" />
+          <img
+            src="/ga-logo.png"
+            alt="Ghanshyam Acharya Aviation Safety Crest"
+            class="wiki-logo-img"
+          />
         </div>
         <div class="wiki-center-caption">
           <span class="wiki-center-badge">Civil Aviation Knowledge Base</span>
         </div>
-        <button type="button" class="curator-bio-trigger" @click="openModal">
-          Curator Profile / About &nearr;
-        </button>
       </section>
 
       <!-- Right Column: Taxonomies & Mountain ADM -->
@@ -105,6 +130,48 @@ onUnmounted(() => {
         </a>
       </section>
     </main>
+
+    <!-- Central Wikipedia-Style Search Bar -->
+    <div class="wiki-search-section">
+      <form class="wiki-search-form" @submit="onSearchSubmit">
+        <div class="wiki-search-box" @click="triggerSearch(searchInput)">
+          <span class="wiki-search-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input
+            v-model="searchInput"
+            type="text"
+            placeholder="Search tail numbers (9N-*), operators, CAR-19, ADREP..."
+            class="wiki-search-input"
+            aria-label="Search aviation knowledge base"
+          />
+          <button type="button" class="wiki-search-submit" @click.stop="triggerSearch(searchInput)">
+            Search
+          </button>
+        </div>
+      </form>
+
+      <!-- Quick Search Chips -->
+      <div class="wiki-search-chips">
+        <span class="chips-label">Popular queries:</span>
+        <button type="button" class="search-chip" @click="triggerSearch('9N-AMW')">9N-AMW</button>
+        <button type="button" class="search-chip" @click="triggerSearch('Buddha Air')">Buddha Air</button>
+        <button type="button" class="search-chip" @click="triggerSearch('CAR-19')">CAR-19</button>
+        <button type="button" class="search-chip" @click="triggerSearch('CFIT')">CFIT</button>
+        <button type="button" class="search-chip" @click="triggerSearch('Lukla')">Lukla</button>
+        <button type="button" class="search-chip" @click="triggerSearch('YOM')">YOM Vintage</button>
+      </div>
+
+      <!-- Curator Profile / About Trigger Button -->
+      <div class="wiki-curator-trigger-wrap">
+        <button type="button" class="curator-bio-trigger" @click="openModal">
+          Curator Profile / About &nearr;
+        </button>
+      </div>
+    </div>
 
     <!-- Minimalist Two-Line Disclaimer Footer -->
     <footer class="wiki-portal-footer">
