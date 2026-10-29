@@ -2,68 +2,50 @@
 layout: home
 
 hero:
-  name: "Nepal Aviation Knowledge Base"
-  text: "Civil Aviation Fleet, Regulatory & Operational Intelligence"
-  tagline: "Structured technical documentation hosted under gsacharya.com/avrepo"
+  name: "Aviation Knowledge Base"
+  text: "Operational Intelligence & Safety Reference for Nepal"
+  tagline: "A free, open-access digital repository mapping Nepalese civil aircraft registers, CAAN regulatory frameworks, human factors models, and mountain ADM protocols."
   actions:
     - theme: brand
-      text: Civil Aircraft Register & YOM
+      text: Explore Fleet Register & YOM
       link: /fleet/nepal-civil-register
     - theme: alt
-      text: CAAN Regulations & ICAO Annexes
+      text: CAAN & ICAO Regulations
       link: /regulations/icao-annexes
-    - theme: alt
-      text: Mountain Safety & Human Factors
-      link: /safety-taxonomies/adrep-hfacs
 
 features:
-  - icon: 🛩️
-    title: Nepal Civil Aircraft Register & YOM
-    details: Commercial fleet tracking by active operator (Buddha, Yeti, Nepal Airlines, Shree, Tara, Summit, Sita) with fleet counts and Year of Manufacture (YOM) aging analysis.
-    link: /fleet/nepal-civil-register
-  - icon: 📜
-    title: CAAN Regulatory Architecture
-    details: Explicit documentation of CAAN CARs (CAR-19 SMS, CAR-M, CAR-145, FOR), State Safety Programme (SSP), NASP, Enforcement Manual, and Mountain Directives.
-    link: /regulations/icao-annexes
-  - icon: 🛡️
-    title: ADREP & HFACS (Nepal Airspace)
-    details: ICAO ADREP occurrence categories (CFIT, LOC-I, RE) and 4-tier HFACS frameworks mapped directly against Himalayan mountain terrain and weather hazards.
-    link: /safety-taxonomies/adrep-hfacs
-  - icon: 🧠
-    title: Mountain Aeronautical Decision Making
-    details: Operational ADM models (DECIDE, FOR-DEC, PAVE, IMSAFE, TEM) calibrated for valley cloud buildup, high density-altitude STOL fields, and weather window pressures.
-    link: /human-factors/decision-making
+  - title: ✈️ Nepal Civil Fleet & Aging
+    details: Structured registers tracking active commercial turboprops, international jets, mountain STOL aircraft, and rotor-wing fleets with Year of Manufacture (YOM) vintage tracking.
+  - title: 📜 CAAN & ICAO Regulatory Hub
+    details: Direct compliance mapping connecting ICAO Annexes to Civil Aviation Requirements (CAR-19, SSP Nepal, NASP, and AEPPM enforcement frameworks).
+  - title: 🧠 Safety Taxonomies & Mountain ADM
+    details: Practical application of ICAO ADREP categories, HFACS error frameworks, and high-altitude aeronautical decision-making (ADM) tailored to Himalayan airspace.
 ---
 
-<div style="display: flex; justify-content: center; margin: 24px 0 16px;">
-  <span class="studio-pill">
-    <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: var(--vp-c-brand-1);"></span>
-    SMS360X &bull; Aviation Operations & Safety Architecture
-  </span>
-</div>
+## What is AvRepo?
+**AvRepo** (`gsacharya.com/avrepo`) is a centralized, open-access digital reference repository designed for aviation professionals, safety managers, flight crews, regulators, and researchers. It bridges the gap between high-level international standards and the complex, low-margin operational realities of flying and managing aviation in Nepal's demanding Himalayan environment.
 
-## Navigation & Quick Search Index
+## Why This Repository Exists
+Nepal's aviation ecosystem possesses unique operational constraints—ranging from high-altitude STOL airstrips and extreme meteorological shifts to specialized helicopter search-and-rescue (SAR) logistics. Critical safety data, fleet vintages, and regulatory cross-references are often scattered across disparate sources. AvRepo compiles these essential datasets into a single, lightning-fast, searchable interface to support data-driven safety culture and risk management.
 
-Use the client-side search bar (<kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>Cmd</kbd> + <kbd>K</kbd>) to instantly locate tail numbers, airline callsigns, CAAN CAR clauses, or mountain operational directives.
-
-### Core Modules Summary
-
-| Module | Scope / Key Focus | Primary Coverage | Direct Link |
-| :--- | :--- | :--- | :--- |
-| **Fleet Registry** | Active Commercial Operators & Aging | Operator breakdown, fleet counts, registrations (`9N-*`), YOM vintage tracking | [Nepal Civil Register](/fleet/nepal-civil-register) |
-| **Regulations** | CAAN & ICAO Compliance Architecture | CAR-19 (SMS), CAR-M, SSP Nepal, NASP 2023–2028, AEPPM, Mountain Directives | [ICAO & CAAN Regulatory Framework](/regulations/icao-annexes) |
-| **Safety Taxonomies** | ADREP & HFACS in Nepalese Sectors | CFIT, LOC-I, RE, ARC, MAC mapped to valley terrain, orographic clouds, and HFACS tiers | [ADREP & HFACS Frameworks](/safety-taxonomies/adrep-hfacs) |
-| **Human Factors** | Aeronautical Decision Making (ADM) | DECIDE, FOR-DEC, PAVE checklist, IMSAFE, Hazardous attitudes, mountain TEM | [Mountain Aeronautical Decision Making](/human-factors/decision-making) |
+## Who Can Use It?
+* **Flight Crews & Operators:** Quick-reference operational checklists, weather minima standards, and mountain ADM frameworks.
+* **Safety Managers & SMS Officers:** HFACS error taxonomies, occurrence classifications, and regulatory compliance mapping.
+* **Regulators & Auditors:** Direct cross-references between ICAO standards and CAAN publications (CARs, NASP, AEPPM).
+* **Researchers & Students:** Reliable fleet aging baselines and historical register tracking across Nepalese commercial aviation.
 
 ---
 
-### Search Quick-Key Index
+## About the Author & Curator
 
-The search index is pre-configured to tokenize and match:
+**Ghanshyam R. Acharya**  
+*Human Factors Analyst | Aviation Safety Consultant | HRO Specialist*
 
-- **Tail Registrations**: `9N-AMW`, `9N-AKB`, `9N-ANA`, `9N-ALC`, `9N-AIT`, `9N-AKU`, `9N-ABT`, `9N-AJD`, `9N-AKG`, `9N-ANB`
-- **Commercial Operators**: Buddha Air, Yeti Airlines, Nepal Airlines (NAC), Shree Airlines, Tara Air, Summit Air, Sita Air, Air Dynasty, Simrik Air, Heli Everest, Altitude Air, Kailash Helicopter, Prabhu Helicopters
-- **Fleet Aging & Vintage**: Year of Manufacture (YOM), airframe vintages (1979–2021), fleet counts
-- **CAAN Statutory Framework**: CAR-19 (SMS), CAR-M, CAR-145, CAR-66, CAR-14, FOR-A, FOR-H, State Safety Programme (SSP) Nepal, National Aviation Safety Plan (NASP), Aviation Enforcement Policy and Procedure Manual (AEPPM)
-- **Mountain Operations & Directives**: STOL aerodromes (Lukla / VNLK, Jomsom / VNJS, Simikot / VNST), 5 km VFR en-route minima, Monsoon SOPs, dual-pilot helicopter mountain mandate
-- **Aviation Safety Taxonomies**: ICAO ADREP (CFIT, LOC-I, RE, ARC, MAC), HFACS Levels 1–4, DECIDE, FOR-DEC, PAVE, IMSAFE, Threat & Error Management (TEM)
+This repository is curated by Ghanshyam R. Acharya, drawing on nearly five decades of operational experience across Nepal's high-complexity Himalayan environment. As a Certified Human Factors Instructor, trained Aircraft Accident Investigator (MoCTCA), former CEO, SGM, and Accountable Manager of Sita Air, former Flight Safety Inspector with the Department of Civil Aviation, and author of the bi-weekly aviation safety newsletter ***The Safety Layer***, this resource reflects decades of frontline hazard identification, regulatory oversight, and systems-safety application.
+
+---
+
+## Disclaimer
+
+* **Operational & Educational Reference Only:** The content provided in AvRepo is compiled for general educational, safety awareness, and reference purposes. It does not supersede official company manuals, aircraft flight manuals (AFM), or statutory directives issued by the Civil Aviation Authority of Nepal (CAAN) or other competent authorities.
+* **No Official Endorsement:** This is an independent open-access resource and is not an official publication of CAAN or any specific commercial airline. While every effort is made to ensure accuracy and currency of fleet registers and regulatory summaries, users must always verify compliance against current official state publications and primary regulatory sources.
