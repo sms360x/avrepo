@@ -2,51 +2,51 @@
 layout: home
 
 hero:
-  name: "Aviation Knowledge Base"
-  text: "Operational, Fleet & Safety Intelligence"
+  name: "Nepal Aviation Knowledge Base"
+  text: "Civil Aviation Fleet, Regulatory & Operational Intelligence"
   tagline: "Structured technical documentation hosted under gsacharya.com/avrepo"
   actions:
     - theme: brand
-      text: Civil Aircraft Register
+      text: Civil Aircraft Register & YOM
       link: /fleet/nepal-civil-register
     - theme: alt
-      text: Safety Taxonomies (ADREP & HFACS)
-      link: /safety-taxonomies/adrep-hfacs
+      text: CAAN Regulations & ICAO Annexes
+      link: /regulations/icao-annexes
     - theme: alt
-      text: Operational Decision Making
-      link: /human-factors/decision-making
+      text: Mountain Safety & Human Factors
+      link: /safety-taxonomies/adrep-hfacs
 
 features:
   - icon: 🛩️
-    title: Nepal Civil Aircraft Register
-    details: Comprehensive registry for fixed-wing airliners, STOL aircraft, and rotor-wing utility fleets operating across Himalayan sectors.
+    title: Nepal Civil Aircraft Register & YOM
+    details: Commercial fleet tracking by active operator (Buddha, Yeti, Nepal Airlines, Shree, Tara, Summit, Sita) with fleet counts and Year of Manufacture (YOM) aging analysis.
     link: /fleet/nepal-civil-register
+  - icon: 📜
+    title: CAAN Regulatory Architecture
+    details: Explicit documentation of CAAN CARs (CAR-19 SMS, CAR-M, CAR-145, FOR), State Safety Programme (SSP), NASP, Enforcement Manual, and Mountain Directives.
+    link: /regulations/icao-annexes
   - icon: 🛡️
-    title: Safety Taxonomies & HFACS
-    details: ICAO ADREP occurrence classifications integrated with the Human Factors Analysis and Classification System (HFACS).
+    title: ADREP & HFACS (Nepal Airspace)
+    details: ICAO ADREP occurrence categories (CFIT, LOC-I, RE) and 4-tier HFACS frameworks mapped directly against Himalayan mountain terrain and weather hazards.
     link: /safety-taxonomies/adrep-hfacs
   - icon: 🧠
-    title: Aeronautical Decision Making
-    details: Operational frameworks including DECIDE, FOR-DEC, PAVE, and Threat & Error Management (TEM) for high-risk flight operations.
+    title: Mountain Aeronautical Decision Making
+    details: Operational ADM models (DECIDE, FOR-DEC, PAVE, IMSAFE, TEM) calibrated for valley cloud buildup, high density-altitude STOL fields, and weather window pressures.
     link: /human-factors/decision-making
-  - icon: 📜
-    title: ICAO SARPs & CAAN Regulations
-    details: Systematic compliance tracking across the 19 ICAO Annexes, NCAR standards, and regulatory operating requirements.
-    link: /regulations/icao-annexes
 ---
 
 ## Navigation & Quick Search Index
 
-Use the client-side search bar (<kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>Cmd</kbd> + <kbd>K</kbd>) to instantly locate tail numbers, airline callsigns, ICAO taxonomies, or regulatory clauses.
+Use the client-side search bar (<kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>Cmd</kbd> + <kbd>K</kbd>) to instantly locate tail numbers, airline callsigns, CAAN CAR clauses, or mountain operational directives.
 
 ### Core Modules Summary
 
 | Module | Scope / Key Focus | Primary Coverage | Direct Link |
 | :--- | :--- | :--- | :--- |
-| **Fleet Registry** | Fixed-Wing & Rotor-Wing Fleet | Tail numbers (`9N-*`), MSN, MTOW, engine configurations, operators | [Nepal Civil Register](/fleet/nepal-civil-register) |
-| **Safety Taxonomies** | Accident/Incident Classification | ICAO ADREP 2000 taxonomies, HFACS Levels 1–4, taxonomy matrices | [ADREP & HFACS Frameworks](/safety-taxonomies/adrep-hfacs) |
-| **Human Factors** | Operational Decision Models | DECIDE, FOR-DEC, PAVE checklist, IMSAFE, Hazardous attitudes, TEM | [Aeronautical Decision Making](/human-factors/decision-making) |
-| **Regulations** | International & State Compliance | Chicago Convention Annexes 1–19, SARPs, CAAN NCAR/FOR alignments | [ICAO Annexes & Standards](/regulations/icao-annexes) |
+| **Fleet Registry** | Active Commercial Operators & Aging | Operator breakdown, fleet counts, registrations (`9N-*`), YOM vintage tracking | [Nepal Civil Register](/fleet/nepal-civil-register) |
+| **Regulations** | CAAN & ICAO Compliance Architecture | CAR-19 (SMS), CAR-M, SSP Nepal, NASP 2023–2028, AEPPM, Mountain Directives | [ICAO & CAAN Regulatory Framework](/regulations/icao-annexes) |
+| **Safety Taxonomies** | ADREP & HFACS in Nepalese Sectors | CFIT, LOC-I, RE, ARC, MAC mapped to valley terrain, orographic clouds, and HFACS tiers | [ADREP & HFACS Frameworks](/safety-taxonomies/adrep-hfacs) |
+| **Human Factors** | Aeronautical Decision Making (ADM) | DECIDE, FOR-DEC, PAVE checklist, IMSAFE, Hazardous attitudes, mountain TEM | [Mountain Aeronautical Decision Making](/human-factors/decision-making) |
 
 ---
 
@@ -54,9 +54,9 @@ Use the client-side search bar (<kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>Cmd</kbd>
 
 The search index is pre-configured to tokenize and match:
 
-- **Tail Registrations**: `9N-AET`, `9N-AKB`, `9N-ANA`, `9N-AMW`, `9N-AJD`, `9N-ALC`, `9N-AHW`, `9N-AJQ`
-- **Operators**: Yeti Airlines, Buddha Air, Tara Air, Shree Airlines, Nepal Airlines, Summit Air, Altitude Air, Simrik Air, Heli Everest
-- **ICAO Aircraft Types**: `AT75` (ATR 72-500/600), `DHC6` (Twin Otter), `A20N` (A320neo), `A332` (A330-200), `AS50` (Airbus H125 / AS350 B3e), `B407` (Bell 407)
-- **Safety Categories**: CFIT, LOC-I, RE, MAC, SCF-PP, ARC, Level 1 Unsafe Acts, Latent Organizational Conditions
-- **Decision Models**: DECIDE, FOR-DEC, PAVE, IMSAFE, Threat & Error Management (TEM)
-- **Regulatory Annexes**: Annex 1 (PEL), Annex 2 (Rules), Annex 6 (Operation), Annex 8 (Airworthiness), Annex 13 (Investigation), Annex 14 (Aerodromes), Annex 19 (SMS)
+- **Tail Registrations**: `9N-AMW`, `9N-AKB`, `9N-ANA`, `9N-ALC`, `9N-AIT`, `9N-AKU`, `9N-ABT`, `9N-AJD`, `9N-AKG`, `9N-ANB`
+- **Commercial Operators**: Buddha Air, Yeti Airlines, Nepal Airlines (NAC), Shree Airlines, Tara Air, Summit Air, Sita Air, Air Dynasty, Simrik Air, Heli Everest, Altitude Air, Kailash Helicopter, Prabhu Helicopters
+- **Fleet Aging & Vintage**: Year of Manufacture (YOM), airframe vintages (1979–2021), fleet counts
+- **CAAN Statutory Framework**: CAR-19 (SMS), CAR-M, CAR-145, CAR-66, CAR-14, FOR-A, FOR-H, State Safety Programme (SSP) Nepal, National Aviation Safety Plan (NASP), Aviation Enforcement Policy and Procedure Manual (AEPPM)
+- **Mountain Operations & Directives**: STOL aerodromes (Lukla / VNLK, Jomsom / VNJS, Simikot / VNST), 5 km VFR en-route minima, Monsoon SOPs, dual-pilot helicopter mountain mandate
+- **Aviation Safety Taxonomies**: ICAO ADREP (CFIT, LOC-I, RE, ARC, MAC), HFACS Levels 1–4, DECIDE, FOR-DEC, PAVE, IMSAFE, Threat & Error Management (TEM)

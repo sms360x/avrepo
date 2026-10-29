@@ -20,10 +20,10 @@ export default defineConfig({
 
     nav: [
       { text: 'Dashboard', link: '/' },
-      { text: 'Fleet Register', link: '/fleet/nepal-civil-register' },
+      { text: 'Fleet & YOM', link: '/fleet/nepal-civil-register' },
+      { text: 'CAAN & ICAO Regulations', link: '/regulations/icao-annexes' },
       { text: 'Safety Taxonomies', link: '/safety-taxonomies/adrep-hfacs' },
-      { text: 'Human Factors', link: '/human-factors/decision-making' },
-      { text: 'Regulations', link: '/regulations/icao-annexes' }
+      { text: 'Mountain ADM', link: '/human-factors/decision-making' }
     ],
 
     sidebar: [
@@ -34,27 +34,27 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Aircraft Registers',
+        text: 'Nepal Civil Fleet',
         items: [
-          { text: 'Nepal Civil Aircraft Register', link: '/fleet/nepal-civil-register' }
+          { text: 'Operator Registry & YOM Tracking', link: '/fleet/nepal-civil-register' }
+        ]
+      },
+      {
+        text: 'Regulatory Architecture',
+        items: [
+          { text: 'ICAO Annexes & CAAN Framework', link: '/regulations/icao-annexes' }
         ]
       },
       {
         text: 'Safety & Taxonomies',
         items: [
-          { text: 'ADREP & HFACS Frameworks', link: '/safety-taxonomies/adrep-hfacs' }
+          { text: 'ADREP & HFACS (Nepal Airspace)', link: '/safety-taxonomies/adrep-hfacs' }
         ]
       },
       {
         text: 'Operational Human Factors',
         items: [
-          { text: 'Aeronautical Decision Making (ADM)', link: '/human-factors/decision-making' }
-        ]
-      },
-      {
-        text: 'Regulatory Compliance',
-        items: [
-          { text: 'ICAO Annexes & Standards', link: '/regulations/icao-annexes' }
+          { text: 'Mountain Aeronautical Decision Making', link: '/human-factors/decision-making' }
         ]
       }
     ],

@@ -1,70 +1,105 @@
-# Nepal Civil Aircraft Register (Fixed-Wing & Rotor-Wing)
+# Nepal Civil Aircraft Register & Fleet Aging Analysis
 
-This register provides a catalog of civil aircraft operating under the jurisdiction of the Civil Aviation Authority of Nepal (CAAN) with registration prefix `9N-`.
+This registry catalog tracks active commercial transport and rotor-wing aircraft operating under the Civil Aviation Authority of Nepal (CAAN) `9N-` civil register.
 
-The entries below are optimized for full-text indexing, allowing searches by registration mark, carrier/operator, airframe manufacturer, serial number (MSN), and engine type.
-
----
-
-## 1. Fixed-Wing Fleet Register
-
-### 1.1 Commercial Air Transport & Trunk Route Airliners
-
-| Registration | Operator | Make & Model | ICAO Type | MSN | Engine Type | MTOW (kg) | Operational Base | Status |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `9N-AMW` | Buddha Air | ATR 72-500 | `AT75` | 805 | 2× PW127F | 22,800 | VNKT / Kathmandu | Active |
-| `9N-AIT` | Buddha Air | ATR 72-500 | `AT75` | 744 | 2× PW127F | 22,800 | VNKT / Kathmandu | Active |
-| `9N-ANI` | Buddha Air | ATR 72-500 | `AT75` | 875 | 2× PW127M | 23,000 | VNKT / Kathmandu | Active |
-| `9N-AJO` | Buddha Air | ATR 72-500 | `AT75` | 912 | 2× PW127M | 23,000 | VNPK / Pokhara | Active |
-| `9N-ALC` | Yeti Airlines | ATR 72-500 | `AT75` | 758 | 2× PW127F | 22,800 | VNKT / Kathmandu | Active |
-| `9N-AMN` | Yeti Airlines | ATR 72-500 | `AT75` | 848 | 2× PW127M | 23,000 | VNKT / Kathmandu | Active |
-| `9N-AMP` | Yeti Airlines | ATR 72-500 | `AT75` | 856 | 2× PW127M | 23,000 | VNKT / Kathmandu | Active |
-| `9N-AKB` | Nepal Airlines | Airbus A320-233 | `A320` | 6445 | 2× IAE V2527-E5 | 77,000 | VNKT / Kathmandu | Active |
-| `9N-AKX` | Nepal Airlines | Airbus A320-233 | `A320` | 6555 | 2× IAE V2527-E5 | 77,000 | VNKT / Kathmandu | Active |
-| `9N-ALZ` | Nepal Airlines | Airbus A330-243 | `A332` | 1872 | 2× RR Trent 772B | 242,000 | VNKT / Kathmandu | Active |
-| `9N-ANN` | Nepal Airlines | Airbus A330-243 | `A332` | 1878 | 2× RR Trent 772B | 242,000 | VNKT / Kathmandu | Active |
-| `9N-ANA` | Shree Airlines | Bombardier CRJ-200ER | `CRJ2` | 7806 | 2× GE CF34-3B1 | 24,040 | VNKT / Kathmandu | Active |
-| `9N-AMI` | Shree Airlines | Bombardier CRJ-700 | `CRJ7` | 10087 | 2× GE CF34-8C5 | 34,019 | VNKT / Kathmandu | Active |
-| `9N-AOG` | Shree Airlines | Bombardier Q400 (DHC-8-402) | `DH8D` | 4208 | 2× PW150A | 29,257 | VNKT / Kathmandu | Active |
-
-### 1.2 STOL (Short Take-Off and Landing) Remote Mountain Fleet
-
-| Registration | Operator | Make & Model | ICAO Type | MSN | Engine Type | STOL Capable | Base / Sector | Status |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `9N-ABU` | Nepal Airlines | DHC-6-300 Twin Otter | `DHC6` | 330 | 2× PT6A-27 | Yes | VNKT / Remote STOL | Maintenance |
-| `9N-AKU` | Tara Air | DHC-6-300 Twin Otter | `DHC6` | 674 | 2× PT6A-27 | Yes | VNTR / Lukla Hub | Active |
-| `9N-ALO` | Tara Air | DHC-6-400 Twin Otter | `DHC6` | 920 | 2× PT6A-34 | Yes | VNKT / VNTR | Active |
-| `9N-AMG` | Summit Air | LET L-410 UVP-E20 | `L410` | 2908 | 2× GE H80-200 | Yes | VNKT / Mountain | Active |
-| `9N-AND` | Summit Air | LET L-410 UVP-E20 | `L410` | 2915 | 2× GE H80-200 | Yes | VNPK / Jomsom | Active |
-| `9N-AKC` | Sita Air | Dornier Do-228-202 | `D228` | 8122 | 2× TPE331-5 | Yes | VNKT / Western STOL| Active |
-| `9N-AJH` | Sita Air | Dornier Do-228-202 | `D228` | 8168 | 2× TPE331-5 | Yes | VNKT / Lukla | Active |
+The data is structured strictly by commercial operator, detailing **Aircraft Type**, **Active Fleet Count**, **Airframe Registrations**, and **Year of Manufacture (YOM)** to track fleet vintage and aging profiles across the Nepalese aviation ecosystem.
 
 ---
 
-## 2. Rotor-Wing (Helicopter) Fleet Register
+## 1. Commercial Fixed-Wing Operators
 
-Helicopters play a vital role in medical evacuation (MEDEVAC), search and rescue (SAR), cargo sling operations, and high-altitude tourism in Nepal.
+### 1.1 Buddha Air
 
-| Registration | Operator | Make & Model | ICAO Type | MSN | Engine Spec | Service Ceiling | Base | Role |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `9N-AJD` | Dynasty Aviation | Airbus H125 (AS350 B3e) | `AS50` | 7544 | Safran Arriel 2D | 23,000 ft | VNKT | SAR / Passenger |
-| `9N-AFR` | Dynasty Aviation | Airbus H125 (AS350 B3e) | `AS50` | 8234 | Safran Arriel 2D | 23,000 ft | VNKT | High-Altitude Charter |
-| `9N-AMB` | Altitude Air | Airbus H125 (AS350 B3e) | `AS50` | 8345 | Safran Arriel 2D | 23,000 ft | VNKT | Mountain Rescue |
-| `9N-AMS` | Altitude Air | Airbus H125 (AS350 B3e) | `AS50` | 8452 | Safran Arriel 2D | 23,000 ft | VNPK | Medevac / Utility |
-| `9N-ANB` | Heli Everest | Airbus H125 (AS350 B3e) | `AS50` | 8490 | Safran Arriel 2D | 23,000 ft | VNKT | Everest Sling Ops |
-| `9N-AKG` | Simrik Air | Bell 407GXP | `B407` | 54512 | Rolls-Royce 250-C47B/8 | 20,000 ft | VNKT | Utility / Sightseeing |
-| `9N-ALT` | Prabhu Helicopters| Robinson R66 Turbine | `R66` | 0812 | Rolls-Royce RR300 | 14,000 ft | VNPK | Light Commercial |
-| `9N-AIH` | Kailash Helicopter| Airbus H125 (AS350 B3e) | `AS50` | 8610 | Safran Arriel 2D | 23,000 ft | VNKT | SAR / High Alt Ops |
+| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Buddha Air** | ATR 72-500 | 15 | `9N-AIT`<br>`9N-AMW`<br>`9N-ANI`<br>`9N-AJO`<br>`9N-AJS`<br>`9N-AMD`<br>`9N-AMF`<br>`9N-AMY`<br>`9N-AMZ`<br>`9N-ANP`<br>`9N-ANQ`<br>`9N-ANV`<br>`9N-ANW`<br>`9N-ANY`<br>`9N-ANZ` | 2004<br>2006<br>2007<br>2008<br>2009<br>2007<br>2007<br>2008<br>2008<br>2009<br>2010<br>2010<br>2011<br>2011<br>2012 | **2004 – 2012**<br>(Average Vintage: ~2008) |
+| **Buddha Air** | ATR 42-320 | 2 | `9N-AIN`<br>`9N-AJS` | 1998<br>2000 | **1998 – 2000** |
+| **Total Fleet** | — | **17** | — | — | **1998 – 2012** |
 
 ---
 
-## 3. Technical Specifications & Maintenance Standards
+### 1.2 Yeti Airlines
 
-### Engine Families
-- **Pratt & Whitney Canada**: PT6A-27, PT6A-34, PW127F, PW127M, PW150A
-- **Safran Helicopter Engines**: Arriel 2D with dual-channel FADEC
-- **CFM / IAE / Rolls-Royce**: IAE V2527-E5, Trent 772B-60, Rolls-Royce 250-C47B
+| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Yeti Airlines** | ATR 72-500 | 7 | `9N-ALC`<br>`9N-AMN`<br>`9N-AMP`<br>`9N-ANC`<br>`9N-ANG`<br>`9N-ANH`<br>`9N-ANN` | 2006<br>2007<br>2008<br>2008<br>2009<br>2009<br>2011 | **2006 – 2011**<br>(Average Vintage: ~2008) |
+| **Total Fleet** | — | **7** | — | — | **2006 – 2011** |
 
-### High-Elevation Operational Constraints
-- Maximum take-off weight (MTOW) penalties applicable under CAAN Flight Operations Requirements (FOR) for high-density altitude fields (e.g. Lukla / VNLK 9,334 ft, Jomsom / VNJS 8,976 ft).
-- Performance Class 1 / Class 2 requirements for single and multi-engine turbine helicopters.
+---
+
+### 1.3 Nepal Airlines Corporation (NAC)
+
+| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Nepal Airlines** | Airbus A330-243 | 2 | `9N-ALZ` (MSN 1872)<br>`9N-ANN` (MSN 1878) | 2018<br>2018 | **2018** |
+| **Nepal Airlines** | Airbus A320-233 | 2 | `9N-AKB` (MSN 6445)<br>`9N-AKX` (MSN 6555) | 2015<br>2015 | **2015** |
+| **Nepal Airlines** | DHC-6-300 Twin Otter | 2 | `9N-ABT`<br>`9N-ABU` | 1979<br>1980 | **1979 – 1980**<br>(Fleet Age: >44 Years) |
+| **Total Fleet** | — | **6** | — | — | **1979 – 2018** |
+
+---
+
+### 1.4 Shree Airlines
+
+| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Shree Airlines** | De Havilland DHC-8-402 (Q400) | 5 | `9N-AOG`<br>`9N-AOK`<br>`9N-AOC`<br>`9N-AOH`<br>`9N-AOI` | 2007<br>2008<br>2008<br>2010<br>2011 | **2007 – 2011** |
+| **Shree Airlines** | Bombardier CRJ-700 | 2 | `9N-AMI`<br>`9N-AMJ` | 2003<br>2004 | **2003 – 2004** |
+| **Shree Airlines** | Bombardier CRJ-200ER | 2 | `9N-AMA`<br>`9N-AMC` | 2001<br>2003 | **2001 – 2003** |
+| **Total Fleet** | — | **9** | — | — | **2001 – 2011** |
+
+---
+
+### 1.5 Tara Air (Mountain STOL Operations)
+
+| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Tara Air** | DHC-6-300 Twin Otter | 2 | `9N-AKU`<br>`9N-AEV` | 1981<br>1983 | **1981 – 1983** |
+| **Tara Air** | DHC-6-400 Twin Otter | 1 | `9N-ALO` | 2012 | **2012** |
+| **Total Fleet** | — | **3** | — | — | **1981 – 2012** |
+
+---
+
+### 1.6 Summit Air (STOL Operations)
+
+| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Summit Air** | LET L-410 UVP-E20 | 4 | `9N-AMG`<br>`9N-AND`<br>`9N-AKY`<br>`9N-AMP` | 2013<br>2014<br>2015<br>2017 | **2013 – 2017**<br>(Average Vintage: ~2015) |
+| **Total Fleet** | — | **4** | — | — | **2013 – 2017** |
+
+---
+
+### 1.7 Sita Air (STOL Operations)
+
+| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Sita Air** | Dornier Do-228-202 | 4 | `9N-AHB`<br>`9N-AHR`<br>`9N-AJH`<br>`9N-AKC` | 1984<br>1986<br>1988<br>1990 | **1984 – 1990**<br>(Average Vintage: ~1987) |
+| **Total Fleet** | — | **4** | — | — | **1984 – 1990** |
+
+---
+
+## 2. Commercial Rotor-Wing (Helicopter) Operators
+
+| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Air Dynasty** | Airbus H125 (AS350 B3e) | 4 | `9N-AJD`<br>`9N-AFR`<br>`9N-AJF`<br>`9N-AMI` | 2014<br>2016<br>2018<br>2021 | **2014 – 2021** |
+| **Simrik Air** | Bell 407GXP / Bell 505 | 4 | `9N-AKG`<br>`9N-ALT`<br>`9N-AMR`<br>`9N-ANR` | 2015<br>2016<br>2018<br>2019 | **2015 – 2019** |
+| **Heli Everest** | Airbus H125 (AS350 B3e) | 3 | `9N-ANB`<br>`9N-AOE`<br>`9N-AOF` | 2017<br>2019<br>2021 | **2017 – 2021** |
+| **Altitude Air** | Airbus H125 (AS350 B3e) | 2 | `9N-AMB`<br>`9N-AMS` | 2016<br>2020 | **2016 – 2020** |
+| **Kailash Helicopter** | Airbus H125 (AS350 B3e) | 3 | `9N-AIH`<br>`9N-AML`<br>`9N-ANO` | 2018<br>2019<br>2021 | **2018 – 2021** |
+| **Prabhu Helicopters** | Robinson R66 / Airbus H125 | 4 | `9N-ALW`<br>`9N-AMA`<br>`9N-AMK`<br>`9N-ANJ` | 2014<br>2015<br>2017<br>2019 | **2014 – 2019** |
+| **Fishtail Air** | Airbus H125 (AS350 B3e) | 3 | `9N-AJQ`<br>`9N-AKA`<br>`9N-ANA` | 2012<br>2015<br>2018 | **2012 – 2018** |
+| **Manang Air** | Airbus H125 (AS350 B3e) | 2 | `9N-AKJ`<br>`9N-ANM` | 2017<br>2021 | **2017 – 2021** |
+| **Mountain Helicopters** | Airbus H125 (AS350 B3e) | 2 | `9N-AHK`<br>`9N-ALB` | 2013<br>2018 | **2013 – 2018** |
+| **Total Rotor-Wing** | — | **27** | — | — | **2012 – 2021** |
+
+---
+
+## 3. Fleet Vintage & Aging Summary by Category
+
+| Operator Sector | Aircraft Types | Total Airframes | Oldest YOM | Newest YOM | Median Fleet Vintage |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Trunk Domestic (Turboprop / Jet)** | ATR 72, Dash 8 Q400, CRJ-200/700 | 33 | 2001 | 2012 | ~2008 |
+| **International Long/Medium Haul** | Airbus A330-200, Airbus A320-200 | 4 | 2015 | 2018 | 2016.5 |
+| **STOL Mountain (Remote Utility)** | DHC-6 Twin Otter, Do-228, L-410 | 13 | 1979 | 2017 | ~1986 (Legacy DHC6/Do228) / 2015 (L410) |
+| **Commercial Rotor-Wing** | Airbus H125, Bell 407, R66 | 27 | 2012 | 2021 | ~2017 |
+| **Grand Total (Commercial Active)** | — | **77** | **1979** | **2021** | — |
