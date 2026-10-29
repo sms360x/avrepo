@@ -29,8 +29,7 @@ export default defineConfig({
       { text: 'Fleet Register', link: '/fleet/nepal-civil-register' },
       { text: 'Regulations', link: '/regulations/icao-annexes' },
       { text: 'Taxonomies', link: '/safety-taxonomies/adrep-hfacs' },
-      { text: 'Mountain ADM', link: '/human-factors/decision-making' },
-      { text: 'gsacharya.com ↗', link: 'https://gsacharya.com' }
+      { text: 'Mountain ADM', link: '/human-factors/decision-making' }
     ],
 
     sidebar: [

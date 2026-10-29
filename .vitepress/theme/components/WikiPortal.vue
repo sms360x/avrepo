@@ -108,9 +108,6 @@ onUnmounted(() => {
     <!-- Portal Header -->
     <header class="wiki-portal-header">
       <h1 class="wiki-portal-title">AvRepo</h1>
-      <p class="wiki-portal-subtitle">
-        Aviation Operational Intelligence &bull; Nepalese Civil Register &bull; Safety Frameworks
-      </p>
     </header>
 
     <!-- Symmetrical Wikipedia-Style Axis Portal -->
@@ -155,7 +152,7 @@ onUnmounted(() => {
           />
         </div>
         <div class="wiki-center-caption">
-          <span class="wiki-center-badge">Civil Aviation Knowledge Base</span>
+          <span class="wiki-center-badge">Aviation Knowledge Base</span>
         </div>
       </section>
 
