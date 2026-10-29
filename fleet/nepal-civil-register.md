@@ -34,10 +34,16 @@ Buddha Air operates a standardized, active 16-aircraft all-ATR fleet (ATR 42-320
 
 ### 1.2 Yeti Airlines
 
+Yeti Airlines operates a dedicated domestic trunk fleet comprising active ATR 72-500 turboprops, standardizing its operations on the Pratt & Whitney Canada PW127F propulsion platform.
+
 | Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
 | :--- | :--- | :---: | :--- | :--- | :--- |
 | **Yeti Airlines** | ATR 72-500 | 7 | `9N-ALC`<br>`9N-AMN`<br>`9N-AMP`<br>`9N-ANC`<br>`9N-ANG`<br>`9N-ANH`<br>`9N-ANN` | 2006<br>2007<br>2008<br>2008<br>2009<br>2009<br>2011 | **2006 – 2011**<br>(Average Vintage: ~2008) |
-| **Total Fleet** | — | **7** | — | — | **2006 – 2011** |
+| **Total Fleet** | — | **7** | All-ATR 72 Configuration | — | **2006 – 2011** |
+
+<p class="table-source-caption">
+  Source: Verified against primary operator disclosure &mdash; <a href="https://yetiairlines.com/content/fleets" target="_blank" rel="noopener">Yeti Airlines Fleet Profile</a>
+</p>
 
 ---
 
@@ -54,12 +60,18 @@ Buddha Air operates a standardized, active 16-aircraft all-ATR fleet (ATR 42-320
 
 ### 1.4 Shree Airlines
 
+Shree Airlines maintains a dual-category domestic fleet pairing high-speed Bombardier CRJ regional jets (CRJ-200ER and CRJ-700) with high-capacity De Havilland Canada Dash 8-400 (Q400) turboprops.
+
 | Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
 | :--- | :--- | :---: | :--- | :--- | :--- |
 | **Shree Airlines** | De Havilland DHC-8-402 (Q400) | 5 | `9N-AOG`<br>`9N-AOK`<br>`9N-AOC`<br>`9N-AOH`<br>`9N-AOI` | 2007<br>2008<br>2008<br>2010<br>2011 | **2007 – 2011** |
 | **Shree Airlines** | Bombardier CRJ-700 | 2 | `9N-AMI`<br>`9N-AMJ` | 2003<br>2004 | **2003 – 2004** |
 | **Shree Airlines** | Bombardier CRJ-200ER | 2 | `9N-AMA`<br>`9N-AMC` | 2001<br>2003 | **2001 – 2003** |
-| **Total Fleet** | — | **9** | — | — | **2001 – 2011** |
+| **Total Fleet** | — | **9** | Regional Jet & Turboprop Mix | — | **2001 – 2011** |
+
+<p class="table-source-caption">
+  Source: Verified against primary operator disclosure &mdash; <a href="https://www.shreeairlines.com/about-us" target="_blank" rel="noopener">Shree Airlines Corporate Profile &amp; Fleet</a>
+</p>
 
 ---
 
