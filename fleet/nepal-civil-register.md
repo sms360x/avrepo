@@ -14,21 +14,58 @@ Fleet registries in this repository are cross-referenced directly against primar
 
 ### 1.1 Buddha Air
 
-Buddha Air operates a standardized, active 16-aircraft all-ATR fleet (ATR 42-320 and ATR 72-500 series) configured for high-frequency domestic trunk and regional trans-border routes. All legacy Beechcraft 1900D airframes have been formally retired from service and exported to Canada, completing the carrier's transition to a pure ATR turboprop ecosystem.
+Buddha Air operates a standardized, active all-ATR fleet configured for high-frequency domestic trunk and regional trans-border routes. All legacy Beechcraft 1900D airframes have been formally retired from service and exported to Canada, standardizing the carrier entirely on Pratt & Whitney Canada PW120/PW127 turboprop commonality.
 
-| Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
-| :--- | :--- | :---: | :--- | :--- | :--- |
-| **Buddha Air** | ATR 72-500 | 14 | `9N-AIT`<br>`9N-AMW`<br>`9N-ANI`<br>`9N-AJO`<br>`9N-AMD`<br>`9N-AMF`<br>`9N-AMY`<br>`9N-AMZ`<br>`9N-ANP`<br>`9N-ANQ`<br>`9N-ANV`<br>`9N-ANW`<br>`9N-ANY`<br>`9N-ANZ` | 2004<br>2006<br>2007<br>2008<br>2007<br>2007<br>2008<br>2008<br>2009<br>2010<br>2010<br>2011<br>2011<br>2012 | **2004 – 2012**<br>(Average Vintage: ~2008) |
-| **Buddha Air** | ATR 42-320 | 2 | `9N-AIN`<br>`9N-AJS` | 1998<br>2000 | **1998 – 2000** |
-| **Total Fleet** | — | **16** | All-ATR Configuration | — | **1998 – 2012** |
+#### ATR 72-500 & ATR 72-600 Fleet Register
+
+| Aircraft | Engine Model | Aircraft Reg. No. | MSN | MTOW | Date of Operation | Remarks |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **ATR 72-600** | PW127XT | `9N-AOS` | 992 | 23,000 kg | 04-Sep-2026 | Active (Latest fleet addition) |
+| **ATR 72-500** | PW127M | `9N-AOC` | 955 | 22,800 kg | 2023 | Active |
+| **ATR 72-500** | PW127M | `9N-AJL` | 933 | 22,800 kg | 2022 | Active |
+| **ATR 72-500** | PW127M | `9N-ANH` | 924 | 22,800 kg | 2022 | Active |
+| **ATR 72-500** | PW127M | `9N-ANW` | 918 | 22,800 kg | 2021 | Active |
+| **ATR 72-500** | PW127M | `9N-AOG` | 907 | 22,800 kg | 2021 | Active |
+| **ATR 72-500** | PW127M | `9N-ANZ` | 902 | 22,800 kg | 2021 | Active |
+| **ATR 72-500** | PW127F | `9N-ANQ` | 843 | 22,500 kg | 2019 | Active |
+| **ATR 72-500** | PW127F | `9N-ANP` | 841 | 22,500 kg | 2019 | Active |
+| **ATR 72-500** | PW127F | `9N-ANI` | 772 | 22,500 kg | 03-Oct-2019 | Active |
+| **ATR 72-500** | PW127F | `9N-AMF` | 764 | 22,500 kg | 2018 | Active |
+| **ATR 72-500** | PW127F | `9N-AMU` | 759 | 22,500 kg | 2018 | Active |
+| **ATR 72-500** | PW127F | `9N-AMY` | 751 | 22,500 kg | 03-Apr-2019 | Active |
+| **ATR 72-500** | PW127F | `9N-AMD` | 735 | 22,500 kg | 04-Mar-2017 | Active |
+| **ATR 72-500** | PW127F | `9N-AJX` | 578 | 22,500 kg | 2011 | Active |
+| **ATR 72-500** | PW127F/M | `9N-AJS` | 531 | 22,500 kg | 2010 | Active |
+| **ATR 72-500** | PW127F | `9N-AJO` | 535 | 22,500 kg | 02-Jul-2010 | Decommissioned on 09-Mar-2026 (Completed 70,000 flight cycles; fuselage transferred to Nepali Army) |
 
 <p class="table-source-caption">
-  Source: Verified against primary operator disclosure &mdash; <a href="https://www.buddhaair.com/about-us/our-aircrafts" target="_blank" rel="noopener">Buddha Air Fleet Register</a>
+  Source: Verified against primary operator disclosure &mdash; <a href="https://www.buddhaair.com/about-us/our-aircrafts" target="_blank" rel="noopener">Buddha Air ATR 72 Fleet Register</a>
 </p>
 
-> **Fleet Modernization & Historical Retirement Note:**
-> * **Active Baseline:** 16 aircraft (14× ATR 72-500 series, 2× ATR 42-320 series).
-> * **Beechcraft 1900D Retirement & Export:** Buddha Air's original Beechcraft 1900D twin-turboprop fleet (`9N-ABS`, `9N-AEW`, `9N-AEE`, `9N-AIX`) was fully phased out, deregistered under CAAN, and exported to Canadian commercial operators, standardizing the airline's maintenance and flight operations entirely on Pratt & Whitney Canada PW120/PW127 turboprops.
+#### ATR 42-320 Fleet Register
+
+| Aircraft | Engine Model | Aircraft Reg. No. | MSN | MTOW | Date of Operation | Remarks |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **ATR 42-320** | PWC PW121 | `9N-AIT` | 409 | 16,700 kg | 14-May-2009 | Active (Regional & mountain charter operations) |
+| **ATR 42-320** | PWC PW121 | `9N-AIM` | 388 | 16,700 kg | 20-Sep-2008 | Disposed to Regional One on 10-May-2026 |
+| **ATR 42-320** | PWC PW121 | `9N-AIN` | 403 | 16,700 kg | 17-Sep-2008 | Decommissioned on 10-Sep-2024 (Completed full economic life cycle of 70,000 flight cycles; world's first ATR) |
+
+<p class="table-source-caption">
+  Source: Verified against primary operator disclosure &mdash; <a href="https://www.buddhaair.com/about-us/our-aircrafts" target="_blank" rel="noopener">Buddha Air ATR 42 Fleet Register</a>
+</p>
+
+#### Legacy Fleet (Beechcraft 1900D &mdash; Retired & Exported)
+
+| Aircraft | Engine Model | Aircraft Reg. No. | MSN | MTOW | Date of Operation | Remarks |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **Beechcraft 1900D** | P&WC PT6A-67D | `9N-AEE` | UE-286 | 7,688 kg | 30-Sep-1997 | Retired & Exported to Canada (Feb 2023) |
+| **Beechcraft 1900D** | P&WC PT6A-67D | `9N-AEW` | UE-328 | 7,688 kg | 28-Sep-1998 | Retired & Exported to Canada (Feb 2023) |
+| **Beechcraft 1900D** | P&WC PT6A-67D | `9N-ABS` | UE-256 | 7,688 kg | 1997 | Retired & Exported to Canada |
+| **Beechcraft 1900D** | P&WC PT6A-67D | `9N-AIX` | UE-308 | 7,688 kg | 2008 | Retired & Exported to Canada |
+
+<p class="table-source-caption">
+  Source: Verified against primary operator disclosure &mdash; <a href="https://www.buddhaair.com/about-us/our-aircrafts" target="_blank" rel="noopener">Buddha Air Historical Aircraft Register</a>
+</p>
 
 ---
 
