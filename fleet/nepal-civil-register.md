@@ -4,17 +4,27 @@ This registry catalog tracks active commercial transport and rotor-wing aircraft
 
 The data is structured strictly by commercial operator, detailing **Aircraft Type**, **Active Fleet Count**, **Airframe Registrations**, and **Year of Manufacture (YOM)** to track fleet vintage and aging profiles across the Nepalese aviation ecosystem.
 
+::: info Primary Data Baseline & Cross-Referencing
+Fleet registries in this repository are cross-referenced directly against primary operator disclosures and Civil Aviation Authority of Nepal (CAAN) airworthiness records. This primary reconciliation accounts for reporting lag frequently observed in public crowdsourced spotter directories (e.g., tracking airframe sales, exports, leases, and pending deregistrations).
+:::
+
 ---
 
 ## 1. Commercial Fixed-Wing Operators
 
 ### 1.1 Buddha Air
 
+Buddha Air operates a standardized, active 16-aircraft all-ATR fleet (ATR 42-320 and ATR 72-500 series) configured for high-frequency domestic trunk and regional trans-border routes. All legacy Beechcraft 1900D airframes have been formally retired from service and exported to Canada, completing the carrier's transition to a pure ATR turboprop ecosystem.
+
 | Operator | Aircraft Type | Fleet Count | Registrations | Year of Manufacture (YOM) | YOM Span / Fleet Vintage |
 | :--- | :--- | :---: | :--- | :--- | :--- |
-| **Buddha Air** | ATR 72-500 | 15 | `9N-AIT`<br>`9N-AMW`<br>`9N-ANI`<br>`9N-AJO`<br>`9N-AJS`<br>`9N-AMD`<br>`9N-AMF`<br>`9N-AMY`<br>`9N-AMZ`<br>`9N-ANP`<br>`9N-ANQ`<br>`9N-ANV`<br>`9N-ANW`<br>`9N-ANY`<br>`9N-ANZ` | 2004<br>2006<br>2007<br>2008<br>2009<br>2007<br>2007<br>2008<br>2008<br>2009<br>2010<br>2010<br>2011<br>2011<br>2012 | **2004 – 2012**<br>(Average Vintage: ~2008) |
+| **Buddha Air** | ATR 72-500 | 14 | `9N-AIT`<br>`9N-AMW`<br>`9N-ANI`<br>`9N-AJO`<br>`9N-AMD`<br>`9N-AMF`<br>`9N-AMY`<br>`9N-AMZ`<br>`9N-ANP`<br>`9N-ANQ`<br>`9N-ANV`<br>`9N-ANW`<br>`9N-ANY`<br>`9N-ANZ` | 2004<br>2006<br>2007<br>2008<br>2007<br>2007<br>2008<br>2008<br>2009<br>2010<br>2010<br>2011<br>2011<br>2012 | **2004 – 2012**<br>(Average Vintage: ~2008) |
 | **Buddha Air** | ATR 42-320 | 2 | `9N-AIN`<br>`9N-AJS` | 1998<br>2000 | **1998 – 2000** |
-| **Total Fleet** | — | **17** | — | — | **1998 – 2012** |
+| **Total Fleet** | — | **16** | All-ATR Configuration | — | **1998 – 2012** |
+
+> **Fleet Modernization & Historical Retirement Note:**
+> * **Active Baseline:** 16 aircraft (14× ATR 72-500 series, 2× ATR 42-320 series).
+> * **Beechcraft 1900D Retirement & Export:** Buddha Air's original Beechcraft 1900D twin-turboprop fleet (`9N-ABS`, `9N-AEW`, `9N-AEE`, `9N-AIX`) was fully phased out, deregistered under CAAN, and exported to Canadian commercial operators, standardizing the airline's maintenance and flight operations entirely on Pratt & Whitney Canada PW120/PW127 turboprops.
 
 ---
 
@@ -98,8 +108,8 @@ The data is structured strictly by commercial operator, detailing **Aircraft Typ
 
 | Operator Sector | Aircraft Types | Total Airframes | Oldest YOM | Newest YOM | Median Fleet Vintage |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Trunk Domestic (Turboprop / Jet)** | ATR 72, Dash 8 Q400, CRJ-200/700 | 33 | 2001 | 2012 | ~2008 |
+| **Trunk Domestic (Turboprop / Jet)** | ATR 72/42, Dash 8 Q400, CRJ-200/700 | 32 | 1998 | 2012 | ~2008 |
 | **International Long/Medium Haul** | Airbus A330-200, Airbus A320-200 | 4 | 2015 | 2018 | 2016.5 |
 | **STOL Mountain (Remote Utility)** | DHC-6 Twin Otter, Do-228, L-410 | 13 | 1979 | 2017 | ~1986 (Legacy DHC6/Do228) / 2015 (L410) |
 | **Commercial Rotor-Wing** | Airbus H125, Bell 407, R66 | 27 | 2012 | 2021 | ~2017 |
-| **Grand Total (Commercial Active)** | — | **77** | **1979** | **2021** | — |
+| **Grand Total (Commercial Active)** | — | **76** | **1979** | **2021** | — |
