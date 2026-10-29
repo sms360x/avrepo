@@ -1,0 +1,26 @@
+{
+  "name": "avrepo",
+  "version": "1.0.0",
+  "description": "Aviation Knowledge Base documentation repository for gsacharya.com/avrepo",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "keywords": [
+    "aviation",
+    "nepal",
+    "civil-aviation",
+    "icao",
+    "hfacs",
+    "adrep",
+    "safety",
+    "vitepress"
+  ],
+  "author": "G.S. Acharya",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
