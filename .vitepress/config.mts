@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Aviation Knowledge Base',
-  description: 'Operational Intelligence & Safety Reference for Nepal hosted under gsacharya.com/avrepo',
-  base: '/avrepo/',
+  description: 'Operational Intelligence & Safety Reference for Nepal hosted at avrepo.gsacharya.com',
+  base: '/',
   cleanUrls: true,
   lastUpdated: true,
 
@@ -11,7 +11,7 @@ export default defineConfig({
   appearance: 'force-dark',
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/avrepo/airplane-icon.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/airplane-icon.svg' }],
     ['meta', { name: 'theme-color', content: '#0A0A0A' }],
     ['script', {}, `document.documentElement.classList.add('dark')`],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
@@ -86,7 +86,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Curated by Ghanshyam R. Acharya &bull; Operational reference under gsacharya.com/avrepo',
+      message: 'Curated by Ghanshyam R. Acharya &bull; Operational reference at avrepo.gsacharya.com',
       copyright: 'Copyright © 2026 G.S. Acharya. All rights reserved.'
     },
 

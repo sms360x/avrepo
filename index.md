@@ -26,7 +26,7 @@ features:
 ---
 
 ## What is AvRepo?
-**AvRepo** (`gsacharya.com/avrepo`) is a centralized, open-access digital reference repository designed for aviation professionals, safety managers, flight crews, regulators, and researchers. It bridges the gap between high-level international standards and the complex, low-margin operational realities of flying and managing aviation in Nepal's demanding Himalayan environment.
+**AvRepo** (`avrepo.gsacharya.com`) is a centralized, open-access digital reference repository designed for aviation professionals, safety managers, flight crews, regulators, and researchers. It bridges the gap between high-level international standards and the complex, low-margin operational realities of flying and managing aviation in Nepal's demanding Himalayan environment.
 
 ## Why This Repository Exists
 Nepal's aviation ecosystem possesses unique operational constraints—ranging from high-altitude STOL airstrips and extreme meteorological shifts to specialized helicopter search-and-rescue (SAR) logistics. Critical safety data, fleet vintages, and regulatory cross-references are often scattered across disparate sources. AvRepo compiles these essential datasets into a single, lightning-fast, searchable interface to support data-driven safety culture and risk management.

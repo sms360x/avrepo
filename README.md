@@ -2,13 +2,13 @@
 
 [![Deploy Aviation Knowledge Base](https://github.com/gsacharya/avrepo/actions/workflows/deploy.yml/badge.svg)](https://github.com/gsacharya/avrepo/actions/workflows/deploy.yml)
 
-A high-performance, lightweight aviation technical documentation knowledge base built with [VitePress](https://vitepress.dev/) and configured for subpath routing under `/avrepo` at [gsacharya.com/avrepo](https://gsacharya.com/avrepo).
+A high-performance, lightweight aviation technical documentation knowledge base built with [VitePress](https://vitepress.dev/) and configured for root domain hosting at [avrepo.gsacharya.com](https://avrepo.gsacharya.com).
 
 ---
 
 ## 🗂️ Repository Architecture & Routing
 
-All routes are nested under the `/avrepo/` base path.
+All routes are hosted at the root (`/`) of `avrepo.gsacharya.com`.
 
 ```
 avrepo/
@@ -62,21 +62,21 @@ npm install
 # Start local development server (with hot module replacement)
 npm run docs:dev
 
-# Build static output configured for /avrepo/ subpath
+# Build static output
 npm run docs:build
 
 # Preview production build locally
 npm run docs:preview
 ```
 
-The production output is generated in `.vitepress/dist/` with all links and asset references rooted at `/avrepo/`.
+The production output is generated in `.vitepress/dist/` with all links and asset references rooted at `/`.
 
 ---
 
-## 🌐 Deployment to gsacharya.com/avrepo
+## 🌐 Deployment to avrepo.gsacharya.com
 
 The included `.github/workflows/deploy.yml` workflow automatically builds the documentation on every push to the `main` branch:
 
 1. Checks out repository and restores npm cache.
 2. Runs `npm run docs:build` generating optimized HTML, CSS, and JS.
-3. Automatically deploys the static files to GitHub Pages or static host mapped to `/avrepo`.
+3. Automatically deploys the static files to GitHub Pages configured with custom domain `avrepo.gsacharya.com`.
